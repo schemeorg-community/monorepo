@@ -1,4 +1,6 @@
 #!/bin/sh
 set -eu
 cd "$(dirname "$0")"
-scp index.html alpha.servers.scheme.org:/production/lists/www/index.html
+curl --location --fail --silent --show-error -o style.css \
+    https://www.staging.scheme.org/style.css
+scp index.html style.css alpha.servers.scheme.org:/production/lists/www/
