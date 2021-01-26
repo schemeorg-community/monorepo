@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Scheme Standards</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <meta name="viewport" content=
   "width=device-width, initial-scale=1">
   <link rel="icon" href="favicon/favicon.svg" sizes="any" type=
@@ -41,21 +41,16 @@
   <h1 id="logo">Scheme Standards</h1>
   <p>The Scheme programming language (<a href=
   "https://en.wikipedia.org/wiki/Scheme_(programming_language)">Wikipedia</a>)
-  was introduced in the 1975 paper, <em>Scheme: An Interpreter for
-  Extended Lambda Calculus</em>. Since then it has been gradually
-  improved and extended through many rounds of standardization.</p>
-  <h2>The standardization process</h2>
-  <p>The authoritative standards are the <a href=
-  "http://scheme-reports.org/">Scheme reports</a>. Their names
-  follow the convention <b>Revised<sup>n</sup> Report on the
-  Algorithmic Language Scheme</b>, abbreviated
-  <b>R<sup>n</sup>RS</b>.</p>
-  <p>R<sup>3</sup>RS was the first standard that explicitly bore
-  this name. The names of the early standards have been
-  retroactively abbreviated using the same pattern:
-  R<sup>2</sup>RS, R<sup>1</sup>RS, and R<sup>0</sup>RS.</p>
-  <p>The process is overseen by the Scheme Language Steering
-  Committee.</p>
+  was introduced in the 1975 paper, <a href="early/"><em>Scheme: An
+  Interpreter for Extended Lambda Calculus</em></a>. Since then it
+  has been gradually improved and extended through many rounds of
+  standardization.</p>
+  <p>The authoritative standards are the <em>Scheme reports</em>.
+  Their names follow the convention <b>Revised<sup>n</sup> Report
+  on the Algorithmic Language Scheme</b>, abbreviated
+  <b>R<sup>n</sup>RS</b>. The standardization process is overseen
+  by the <a href="http://www.scheme-reports.org/">Scheme Language
+  Steering Committee</a>.</p>
   <h2>Modern standards</h2>
   <p>Most active Scheme implementations now support one or both of
   these standards. Writing code that works on both R<sup>6</sup>RS
@@ -76,6 +71,8 @@
       "https://github.com/johnwcowan/r7rs-work/blob/master/R7RSHomePage.md">
       Large Home Page</a></b></li>
     </ul>
+    <!-- TO DO: Include links to the charter of R7RS Large. The link
+    at scheme-reports.org is broken.-->
   </div>
   <div class="rnrs" style="background-color: pink">
     <h3><b>Revised<sup>6</sup> Report on the Algorithmic Language
@@ -176,66 +173,11 @@
   <p>Download: <a href=
   "https://bitbucket.org/cowan/r7rs/raw/4c27517de187142ad2cf4bcd8cb9199ae1e48c09/rnrs/r3rs.pdf">
   PDF</a>, PS, DVI, HTML</p>
-  <h2>Early standards</h2>
-  <p>The first three Scheme reports were research memos from the
-  MIT Artificial Intelligence Laboratory (now <a href=
-  "https://www.csail.mit.edu/">CSAIL</a>). They are written in an
-  informal tone and are not as comprehensive or rigorous as the
-  later reports.</p>
-  <p>The core language evolved throughout these reports. They are
-  subtly incompatible with each other and with the current form of
-  Scheme. No implementation since about 1990 is based on them.</p>
-  <h3>Revised Revised Report on Scheme (1985)</h3>
-  <p>Abbreviated <b>R<sup>2</sup>RS</b></p>
-  <p>AI Memo No. 848</p>
-  <p>People from Indiana University contributed to the design of
-  the language.</p>
-  <p><a href=
-  "http://dspace.mit.edu/bitstream/handle/1721.1/5600/AIM-848.pdf">PDF</a></p>
-  <h3>Revised Report on Scheme (1978)</h3>
-  <p>Abbreviated <b>R<sup>1</sup>RS</b></p>
-  <p>AI Memo No. 452</p>
-  <p><a href=
-  "http://dspace.mit.edu/bitstream/handle/1721.1/6283/AIM-452.pdf">PDF</a></p>
-  <h3>Scheme: An Interpreter for Extended Lambda Calculus
-  (1975)</h3>
-  <p>Abbreviated <b>R<sup>0</sup>RS</b></p>
-  <p>AI Memo No. 349</p>
-  <p><a href=
-  "http://dspace.mit.edu/bitstream/handle/1721.1/5794/AIM-349.pdf">PDF</a></p>
-  <h2>Other standards</h2>
-  <p>These documents are ratified by established standardization
-  organizations. They exist outside the R<sup>n</sup>RS series, but
-  nevertheless closely follow the R<sup>n</sup>RS designs of their
-  time. Despite the fact that these standards come from reputable
-  organizations, they are now rarely used, and mainly serve as
-  historical curiosities. Virtually all Scheme programmers and
-  implementers prefer the R<sup>n</sup>RS series.</p>
-  <h3>IEEE Standard for the Scheme Programming Language (1990)</h3>
-  <p>Abbreviated <b>IEEE Scheme</b></p>
-  <p><a href=
-  "https://standards.ieee.org/standard/1178-1990.html">IEEE
-  1178-1990</a></p>
-  <p><a href=
-  "https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers">
-  IEEE</a>-ratified standard</p>
-  <p>IEEE Scheme is based on R<sup>4</sup>RS but incorporates a few
-  R<sup>5</sup>RS features. For example, <code>(eq? '() #f)</code>
-  is guaranteed to be false. The standard has no macros.</p>
-  <h3>Document Style Semantics and Specification Language
-  (1996)</h3>
-  <p>Abbreviated <b>DSSSL</b></p>
-  <p>ISO/IEC 10179:1996</p>
-  <p><a href=
-  "https://en.wikipedia.org/wiki/Document_Style_Semantics_and_Specification_Language">
-  Wikipedia</a></p>
-  <p><a href="http://xml.coverpages.org/dsssl.html">DSSSL at OASIS
-  Cover Pages</a> with a comprehensive set of links</p>
-  <p><a href="http://www.jclark.com/dsssl/">James Clark's DSSSL
-  page</a></p>
-  <h2>Design process</h2>
+  <h2>More</h2>
+  <p><b><a href="early/">Early Scheme Reports</a></b></p>
+  <p><b><a href="formal/">Formal standards (IEEE and
+  ISO)</a></b></p>
   <p><b><a href="process/">Design process</a></b></p>
-  <!-- TO DO: Include links to the charter of R7RS Large.  The link at scheme-reports.org is broken.-->
   <hr>
   <p><a href="about/">About
   <code>standards.scheme.org</code></a></p>
