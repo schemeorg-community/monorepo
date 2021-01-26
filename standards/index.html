@@ -8,6 +8,17 @@
   "width=device-width, initial-scale=1">
   <link rel="icon" href="favicon/favicon.svg" sizes="any" type=
   "image/svg+xml">
+  <style type="text/css">
+    div.rnrs {
+        border-radius: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,125 +41,202 @@
   <h1 id="logo">Scheme Standards</h1>
   <p>The Scheme programming language (<a href=
   "https://en.wikipedia.org/wiki/Scheme_(programming_language)">Wikipedia</a>)
-  has been gradually improved and extended through many rounds of
-  standardization, starting from the original 1975 paper,
-  <em>Scheme: An Interpreter for Extended Lambda Calculus</em>, and
-  continuing through R7RS Large, which is still in progress. Many
-  of the standards have been part of a series of <a href=
-  "http://scheme-reports.org/">reports</a> named following the
-  convention "Revised<sup>n</sup> Report on… Scheme," abbreviated
-  "R<sup>n</sup>RS."</p>
-  <!-- TO DO: Update these links to point to their new locations. -->
-  <!-- TO DO: Include links to the charter of R7RS Large.  The link at scheme-reports.org is broken.-->
-  <h2>Active standards</h2>
-  <h3>Revised<sup>7</sup> Report on the Algorithmic Language Scheme
-  (2013)</h3>
-  <p>Known as <b>R<sup>7</sup>RS</b></p>
-  <ul>
-    <li>
-      <a href=
-      "https://small.r7rs.org/attachment/r7rs.pdf">Small</a>
-      (<a href=
-      "http://scheme-reports.org/2009/working-group-1-charter.html">charter</a>)
-    </li>
-    <li>
-      <a href=
+  was introduced in the 1975 paper, <em>Scheme: An Interpreter for
+  Extended Lambda Calculus</em>. Since then it has been gradually
+  improved and extended through many rounds of standardization.</p>
+  <h2>The standardization process</h2>
+  <p>The authoritative standards are the <a href=
+  "http://scheme-reports.org/">Scheme reports</a>. Their names
+  follow the convention <b>Revised<sup>n</sup> Report on the
+  Algorithmic Language Scheme</b>, abbreviated
+  <b>R<sup>n</sup>RS</b>.</p>
+  <p>R<sup>3</sup>RS was the first standard that explicitly bore
+  this name. The names of the early standards have been
+  retroactively abbreviated using the same pattern:
+  R<sup>2</sup>RS, R<sup>1</sup>RS, and R<sup>0</sup>RS.</p>
+  <p>The process is overseen by the Scheme Language Steering
+  Committee.</p>
+  <h2>Modern standards</h2>
+  <p>Most active Scheme implementations now support one or both of
+  these standards. Writing code that works on both R<sup>6</sup>RS
+  and R<sup>7</sup>RS is possible with some care.</p>
+  <div class="rnrs" style="background-color: lightblue">
+    <h3>Revised<sup>7</sup> Report on the Algorithmic Language
+    Scheme (2013)</h3>
+    <p>Abbreviated <b>R<sup>7</sup>RS</b></p>
+    <p>R<sup>7</sup>RS brings back the simplicity of
+    R<sup>5</sup>RS in the core language. Complexity has been moved
+    into an optional <b>large edition</b> that is still a work in
+    progress.</p>
+    <ul>
+      <li><b><a href=
+      "https://small.r7rs.org/attachment/r7rs.pdf">Small
+      PDF</a></b></li>
+      <li><b><a href=
       "https://github.com/johnwcowan/r7rs-work/blob/master/R7RSHomePage.md">
-      Large</a> (working group 2's <a href=
-      "http://scheme-reports.org/2015/working-group-2.html">home
-      page</a>)
-    </li>
-  </ul>
-  <h3>Revised<sup>6</sup> Report on the Algorithmic Language Scheme
-  (2007)</h3>
-  <p>Known as <b>R<sup>6</sup>RS</b></p>
-  <p><a href="http://www.r6rs.org/">home page</a></p>
-  <p><a href="http://www.r6rs.org/process.html">public review
-  process</a></p>
-  <ul>
-    <li>
-      <a href="http://www.r6rs.org/final/r6rs.pdf">base</a>
-    </li>
-    <li>
-      <a href=
-      "http://www.r6rs.org/final/r6rs-lib.pdf">libraries</a>
-    </li>
-    <li>
-      <a href=
-      "http://www.r6rs.org/final/r6rs-app.pdf">appendices</a>
-    </li>
-    <li>
-      <a href=
-      "http://www.r6rs.org/final/r6rs-rationale.pdf">rationale</a>
-    </li>
-  </ul>
+      Large Home Page</a></b></li>
+    </ul>
+  </div>
+  <div class="rnrs" style="background-color: pink">
+    <h3><b>Revised<sup>6</sup> Report on the Algorithmic Language
+    Scheme (2007)</b></h3>
+    <p>Abbreviated <b>R<sup>6</sup>RS</b></p>
+    <p>R<sup>6</sup>RS abandoned the simplicity of R<sup>5</sup>RS
+    and shipped a more full-featured language. Error situations are
+    much more closely specified; a formal hierarchy of condition
+    (exception) types is given.</p>
+    <p>Features procedural macros via <code>syntax-case</code>;
+    hash tables; custom ports, transcoding and endianness; and a
+    much larger standard library.</p>
+    <p>This is the first standard with a library system, enabling
+    programmers to share libraries that work out-of-the-box on
+    multiple Scheme implementations.</p>
+    <p><a href="http://www.r6rs.org/">home page</a></p>
+    <p>Documents:</p>
+    <ul>
+      <li>
+        <a href="browse/r6rs/r6rs.html">R6RS</a>
+      </li>
+      <li>
+        <a href="browse/r6rs/r6rs-lib.html">R6RS (library)</a>
+      </li>
+      <li>
+        <a href="browse/r6rs/r6rs-app.html">R6RS (appendices)</a>
+      </li>
+      <li>
+        <a href="browse/r6rs/r6rs-rationale.html">R6RS
+        (rationale)</a>
+      </li>
+    </ul>
+    <table class="table">
+      <tr>
+        <th>Official version</th>
+        <th>Unofficial errata-corrected version</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="http://www.r6rs.org/final/r6rs.pdf">base</a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <a href=
+          "http://www.r6rs.org/final/r6rs-lib.pdf">libraries</a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <a href=
+          "http://www.r6rs.org/final/r6rs-app.pdf">appendices</a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <a href=
+          "http://www.r6rs.org/final/r6rs-rationale.pdf">rationale</a>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
   <h2>Classic standards</h2>
-  <h3>Revised<sup>5</sup> Report on the Algorithmic Language Scheme
-  (1998)</h3>
-  <p>Known as <b>R<sup>5</sup>RS</b></p>
-  <p><a href=
-  "http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf">PDF</a></p>
+  <p>These standards present the core Scheme syntax and semantics
+  in essentially the same form as it now is.</p>
+  <div class="rnrs" style="background-color: lightgreen">
+    <h3>Revised<sup>5</sup> Report on the Algorithmic Language
+    Scheme (1998)</h3>
+    <p>Abbreviated <b>R<sup>5</sup>RS</b>, this standard comes
+    closest to a Platonic Form of Scheme before later standards
+    tackle the complexities of <em>programming in the large</em>
+    with features such as libraries and exceptions.</p>
+    <p>Weighing in at 50 pages, the R<sup>5</sup>RS document is an
+    object of reverence among programming language enthusiasts. It
+    is a touchstone of the Scheme community and is considered an
+    exemplar of a concise and expressive language specification in
+    other communities as well.</p>
+    <p><a href="browse/r5rs/">R5RS HTML</a></p>
+    <p><a href=
+    "http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf">PDF</a></p>
+  </div>
   <h3>Revised<sup>4</sup> Report on the Algorithmic Language Scheme
   (1991)</h3>
-  <p>Known as <b>R<sup>4</sup>RS</b></p>
+  <p>Abbreviated <b>R<sup>4</sup>RS</b></p>
+  <p>Scheme starts really becoming Scheme with R4RS, e.g. hygienic
+  macros were optional and in the appendix.</p>
   <p><a href=
   "http://people.csail.mit.edu/jaffer/r4rs.pdf">PDF</a></p>
   <h3>Revised<sup>3</sup> Report on the Algorithmic Language Scheme
   (1986)</h3>
-  <p>Known as <b>R<sup>3</sup>RS</b></p>
-  <p><a href=
+  <p>Abbreviated <b>R<sup>3</sup>RS</b>, this was the first Scheme
+  report laid on the now-familiar TeX template.</p>
+  <p>Browse</p>
+  <p>Download: <a href=
   "https://bitbucket.org/cowan/r7rs/raw/4c27517de187142ad2cf4bcd8cb9199ae1e48c09/rnrs/r3rs.pdf">
-  R3RS</a>, Revised<sup>3</sup> Report on the Algorithmic Language
-  Scheme</p>
-  <h2>Proto-standards</h2>
+  PDF</a>, PS, DVI, HTML</p>
+  <h2>Early standards</h2>
+  <p>The first three Scheme reports were research memos from the
+  MIT Artificial Intelligence Laboratory (now <a href=
+  "https://www.csail.mit.edu/">CSAIL</a>). They are written in an
+  informal tone and are not as comprehensive or rigorous as the
+  later reports.</p>
+  <p>The core language evolved throughout these reports. They are
+  subtly incompatible with each other and with the current form of
+  Scheme. No implementation since about 1990 is based on them.</p>
   <h3>Revised Revised Report on Scheme (1985)</h3>
-  <p>Known as <b>R<sup>2</sup>RS</b></p>
+  <p>Abbreviated <b>R<sup>2</sup>RS</b></p>
+  <p>AI Memo No. 848</p>
+  <p>People from Indiana University contributed to the design of
+  the language.</p>
   <p><a href=
-  "http://dspace.mit.edu/bitstream/handle/1721.1/5600/AIM-848.pdf">R2RS</a>,
-  Revised Revised Report on Scheme, a Dialect of Lisp</p>
+  "http://dspace.mit.edu/bitstream/handle/1721.1/5600/AIM-848.pdf">PDF</a></p>
   <h3>Revised Report on Scheme (1978)</h3>
-  <p>Known as <b>R<sup>1</sup>RS</b></p>
+  <p>Abbreviated <b>R<sup>1</sup>RS</b></p>
+  <p>AI Memo No. 452</p>
   <p><a href=
-  "http://dspace.mit.edu/bitstream/handle/1721.1/6283/AIM-452.pdf">R1RS</a>,
-  Revised Report on Scheme, a Dialect of Lisp</p>
+  "http://dspace.mit.edu/bitstream/handle/1721.1/6283/AIM-452.pdf">PDF</a></p>
   <h3>Scheme: An Interpreter for Extended Lambda Calculus
   (1975)</h3>
-  <p>Known as <b>R<sup>0</sup>RS</b></p>
-  <p>Scheme: An Interpreter for Extended Lambda Calculus (AI Memo
-  No. 349)</p>
+  <p>Abbreviated <b>R<sup>0</sup>RS</b></p>
+  <p>AI Memo No. 349</p>
   <p><a href=
   "http://dspace.mit.edu/bitstream/handle/1721.1/5794/AIM-349.pdf">PDF</a></p>
   <h2>Other standards</h2>
-  <h3>IEEE Scheme</h3>
-  <p>IEEE Standard for the Scheme Programming Language</p>
+  <p>These documents are ratified by established standardization
+  organizations. They exist outside the R<sup>n</sup>RS series, but
+  nevertheless closely follow the R<sup>n</sup>RS designs of their
+  time. Despite the fact that these standards come from reputable
+  organizations, they are now rarely used, and mainly serve as
+  historical curiosities. Virtually all Scheme programmers and
+  implementers prefer the R<sup>n</sup>RS series.</p>
+  <h3>IEEE Standard for the Scheme Programming Language (1990)</h3>
+  <p>Abbreviated <b>IEEE Scheme</b></p>
   <p><a href=
   "https://standards.ieee.org/standard/1178-1990.html">IEEE
   1178-1990</a></p>
   <p><a href=
   "https://en.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers">
   IEEE</a>-ratified standard</p>
-  <h3>DSSSL</h3>
-  <p>Document Style Semantics and Specification Language</p>
+  <p>IEEE Scheme is based on R<sup>4</sup>RS but incorporates a few
+  R<sup>5</sup>RS features. For example, <code>(eq? '() #f)</code>
+  is guaranteed to be false. The standard has no macros.</p>
+  <h3>Document Style Semantics and Specification Language
+  (1996)</h3>
+  <p>Abbreviated <b>DSSSL</b></p>
   <p>ISO/IEC 10179:1996</p>
   <p><a href=
   "https://en.wikipedia.org/wiki/Document_Style_Semantics_and_Specification_Language">
   Wikipedia</a></p>
+  <p><a href="http://xml.coverpages.org/dsssl.html">DSSSL at OASIS
+  Cover Pages</a> with a comprehensive set of links</p>
   <p><a href="http://www.jclark.com/dsssl/">James Clark's DSSSL
   page</a></p>
+  <h2>Design process</h2>
+  <p><b><a href="process/">Design process</a></b></p>
+  <!-- TO DO: Include links to the charter of R7RS Large.  The link at scheme-reports.org is broken.-->
   <hr>
-  <p>Here are some mailing list archives where discussion of the
-  earlier Scheme standards took place:</p>
-  <ul>
-    <li>
-      <a href=
-      "http://www.swiss.ai.mit.edu/projects/scheme/rrrs-archive.html">
-      RRRS-Authors mailing-list archive</a>, the primary place
-      where Scheme standards discussion took place from 1984-1998.
-    </li>
-    <li>
-      <a href="http://www.r6rs.org/r6rs-editors/">R6RS archives</a>
-    </li>
-  </ul>
   <p><a href="about/">About
   <code>standards.scheme.org</code></a></p>
 </body>
