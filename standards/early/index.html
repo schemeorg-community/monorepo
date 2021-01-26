@@ -40,20 +40,32 @@
   </header>
   <h1 id="logo">Scheme Standards</h1>
   <h2>Early Scheme reports</h2>
-  <p>R<sup>3</sup>RS was the first standard explicitly named by the
-  pattern <b>Revised<sup>n</sup> Report on the Algorithmic Language
-  Scheme</b>. The names of the early standards have been
-  retroactively abbreviated using the same pattern:
-  R<sup>2</sup>RS, R<sup>1</sup>RS, and R<sup>0</sup>RS.</p>
-  <p>The first three Scheme reports were research memos from the
-  MIT Artificial Intelligence Laboratory (now <a href=
-  "https://www.csail.mit.edu/">CSAIL</a>). They are written in an
-  informal tone and are not as comprehensive or rigorous as the
-  later reports.</p>
-  <p>The core language evolved throughout these reports. They are
-  subtly incompatible with each other and with the current form of
-  Scheme. No implementation since about 1990 is based on them.</p>
-  <section id="r2rs">
+  <p>The first three reports on Scheme were research memos from the
+  <b>MIT Artificial Intelligence Laboratory</b> (now <a href=
+  "https://www.csail.mit.edu/">CSAIL</a>), the birthplace of both
+  Lisp and Scheme.</p>
+  <p>These early reports are written in an informal tone with
+  improvised typesetting. The language definition is not as
+  rigorous or comprehensive as in the later reports. The language
+  is still seeking its form. These versions of Scheme are
+  incompatible with modern Scheme and with each other. No release
+  of any Scheme implementation since about 1990 is based on
+  them.</p>
+  <div class="round-box blue-box">
+    <h3>Retroactive naming convention</h3>
+    <p>Modern Scheme reports are named <b>Revised<sup>n</sup>
+    Report on the Algorithmic Language Scheme</b>, abbreviated
+    <b>R<sup>n</sup>RS</b>. The first standard explicitly named
+    thus was <a href="../#r3rs">R<sup>3</sup>RS</a>. The names of
+    the earlier reports have been retroactively abbreviated using
+    the same pattern: R<sup>2</sup>RS and R<sup>1</sup>RS. As a
+    <a href=
+    "https://en.wikipedia.org/wiki/Exponentiation#Zero_exponent">mathematical
+    pun</a>, the very first report is dubbed R<sup>0</sup>RS since
+    it isn't revised at all.</p>
+  </div>
+  <h2>The three early reports</h2>
+  <section id="r2rs" class="round-box gray-box">
     <h3>Revised Revised Report on Scheme (1985)</h3>
     <p>Abbreviated <b>R<sup>2</sup>RS</b></p>
     <p>AI Memo No. 848</p>
@@ -62,8 +74,19 @@
     <p><a href=
     "http://dspace.mit.edu/bitstream/handle/1721.1/5600/AIM-848.pdf">
     PDF</a></p>
+    <p>The abstract of the paper was written as a poem:</p>
+    <blockquote>
+      <i>Data and procedures and the values they amass,<br>
+      Higher-order functions to combine and mix and match,<br>
+      Objects with their local state, the messages they pass,<br>
+      A property, a package, the control point for a catch —<br>
+      In the Lambda Order they are all first-class.<br>
+      One Thing to name them all, One Thing to define them,<br>
+      One Thing to place them in environments and bind them,<br>
+      In the Lambda Order they are all first-class.</i>
+    </blockquote>
   </section>
-  <section id="r1rs">
+  <section id="r1rs" class="round-box gray-box">
     <h3>Revised Report on Scheme (1978)</h3>
     <p>Abbreviated <b>R<sup>1</sup>RS</b></p>
     <p>AI Memo No. 452</p>
@@ -71,7 +94,7 @@
     "http://dspace.mit.edu/bitstream/handle/1721.1/6283/AIM-452.pdf">
     PDF</a></p>
   </section>
-  <section id="r0rs">
+  <section id="r0rs" class="round-box gray-box">
     <h3>Scheme: An Interpreter for Extended Lambda Calculus
     (1975)</h3>
     <p>Abbreviated <b>R<sup>0</sup>RS</b></p>

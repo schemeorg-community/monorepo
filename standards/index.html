@@ -8,17 +8,6 @@
   "width=device-width, initial-scale=1">
   <link rel="icon" href="favicon/favicon.svg" sizes="any" type=
   "image/svg+xml">
-  <style type="text/css">
-    div.rnrs {
-        border-radius: 15px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -39,23 +28,19 @@
     </ul>
   </header>
   <h1 id="logo">Scheme Standards</h1>
-  <p>The Scheme programming language (<a href=
-  "https://en.wikipedia.org/wiki/Scheme_(programming_language)">Wikipedia</a>)
-  was introduced in the 1975 paper, <a href="early/"><em>Scheme: An
-  Interpreter for Extended Lambda Calculus</em></a>. Since then it
-  has been gradually improved and extended through many rounds of
-  standardization.</p>
-  <p>The authoritative standards are the <em>Scheme reports</em>.
-  Their names follow the convention <b>Revised<sup>n</sup> Report
-  on the Algorithmic Language Scheme</b>, abbreviated
-  <b>R<sup>n</sup>RS</b>. The standardization process is overseen
-  by the <a href="http://www.scheme-reports.org/">Scheme Language
-  Steering Committee</a>.</p>
+  <p>The Scheme programming language was introduced in the 1975
+  paper, <a href="early/#r0rs"><em>Scheme: An Interpreter for
+  Extended Lambda Calculus</em></a>. Since then it has been
+  improved and extended through many rounds of standardization. The
+  authoritative standards are the <em>Scheme reports</em>. Their
+  names follow the convention <b>Revised<sup>n</sup> Report on the
+  Algorithmic Language Scheme</b>, abbreviated
+  <b>R<sup>n</sup>RS</b>.</p>
   <h2>Modern standards</h2>
   <p>Most active Scheme implementations now support one or both of
   these standards. Writing code that works on both R<sup>6</sup>RS
   and R<sup>7</sup>RS is possible with some care.</p>
-  <div class="rnrs" style="background-color: lightblue">
+  <section id="r7rs" class="round-box blue-box">
     <h3>Revised<sup>7</sup> Report on the Algorithmic Language
     Scheme (2013)</h3>
     <p>Abbreviated <b>R<sup>7</sup>RS</b></p>
@@ -73,8 +58,8 @@
     </ul>
     <!-- TO DO: Include links to the charter of R7RS Large. The link
     at scheme-reports.org is broken.-->
-  </div>
-  <div class="rnrs" style="background-color: pink">
+  </section>
+  <section id="r6rs" class="round-box red-box">
     <h3><b>Revised<sup>6</sup> Report on the Algorithmic Language
     Scheme (2007)</b></h3>
     <p>Abbreviated <b>R<sup>6</sup>RS</b></p>
@@ -138,11 +123,11 @@
         <td></td>
       </tr>
     </table>
-  </div>
+  </section>
   <h2>Classic standards</h2>
   <p>These standards present the core Scheme syntax and semantics
   in essentially the same form as it now is.</p>
-  <div class="rnrs" style="background-color: lightgreen">
+  <section id="r5rs" class="round-box green-box">
     <h3>Revised<sup>5</sup> Report on the Algorithmic Language
     Scheme (1998)</h3>
     <p>Abbreviated <b>R<sup>5</sup>RS</b>, this standard comes
@@ -157,23 +142,27 @@
     <p><a href="browse/r5rs/">R5RS HTML</a></p>
     <p><a href=
     "http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf">PDF</a></p>
-  </div>
-  <h3>Revised<sup>4</sup> Report on the Algorithmic Language Scheme
-  (1991)</h3>
-  <p>Abbreviated <b>R<sup>4</sup>RS</b></p>
-  <p>Scheme starts really becoming Scheme with R4RS, e.g. hygienic
-  macros were optional and in the appendix.</p>
-  <p><a href=
-  "http://people.csail.mit.edu/jaffer/r4rs.pdf">PDF</a></p>
-  <h3>Revised<sup>3</sup> Report on the Algorithmic Language Scheme
-  (1986)</h3>
-  <p>Abbreviated <b>R<sup>3</sup>RS</b>, this was the first Scheme
-  report laid on the now-familiar TeX template.</p>
-  <p>Browse</p>
-  <p>Download: <a href=
-  "https://bitbucket.org/cowan/r7rs/raw/4c27517de187142ad2cf4bcd8cb9199ae1e48c09/rnrs/r3rs.pdf">
-  PDF</a>, PS, DVI, HTML</p>
-  <h2>More</h2>
+  </section>
+  <section id="r4rs" class="round-box gray-box">
+    <h3>Revised<sup>4</sup> Report on the Algorithmic Language
+    Scheme (1991)</h3>
+    <p>Abbreviated <b>R<sup>4</sup>RS</b></p>
+    <p>Scheme starts really becoming Scheme with R4RS, e.g.
+    hygienic macros were optional and in the appendix.</p>
+    <p><a href=
+    "http://people.csail.mit.edu/jaffer/r4rs.pdf">PDF</a></p>
+  </section>
+  <section id="r3rs" class="round-box gray-box">
+    <h3>Revised<sup>3</sup> Report on the Algorithmic Language
+    Scheme (1986)</h3>
+    <p>Abbreviated <b>R<sup>3</sup>RS</b>, this was the first
+    Scheme report laid on the now-familiar TeX template.</p>
+    <p>Browse</p>
+    <p>Download: <a href=
+    "https://bitbucket.org/cowan/r7rs/raw/4c27517de187142ad2cf4bcd8cb9199ae1e48c09/rnrs/r3rs.pdf">
+    PDF</a>, PS, DVI, HTML</p>
+  </section>
+  <h2>More information</h2>
   <p><b><a href="early/">Early Scheme Reports</a></b></p>
   <p><b><a href="formal/">Formal standards (IEEE and
   ISO)</a></b></p>
