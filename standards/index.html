@@ -43,86 +43,94 @@
   <section id="r7rs" class="round-box blue-box">
     <h3>Revised<sup>7</sup> Report on the Algorithmic Language
     Scheme (2013)</h3>
-    <p>Abbreviated <b>R<sup>7</sup>RS</b></p>
-    <p>R<sup>7</sup>RS brings back the simplicity of
-    R<sup>5</sup>RS in the core language. Complexity has been moved
-    into an optional <b>large edition</b> that is still a work in
-    progress.</p>
-    <ul>
-      <li><b><a href=
-      "https://small.r7rs.org/attachment/r7rs.pdf">Small
-      PDF</a></b></li>
-      <li><b><a href=
-      "https://github.com/johnwcowan/r7rs-work/blob/master/R7RSHomePage.md">
-      Large Home Page</a></b></li>
-    </ul>
+    <p>Abbreviated <b>R<sup>7</sup>RS</b>, this standard brings
+    back the simplicity of R<sup>5</sup>RS in the core language.
+    Complexity has been moved into an optional <b>large edition</b>
+    that is still a work in progress.</p>
+    <p><b>What's new:</b> <code>define-library</code>
+    definitions</p>
+    <div class="round-box gray-box">
+      <p><b>Official documents (PDF):</b><br>
+      <a href="official/r7rs.pdf">R<sup>7</sup>RS Small
+      Edition</a></p>
+    </div>
+    <div class="round-box gray-box">
+      <p><b>Unofficial documents with errata corrected
+      (PDF):</b><br>
+      <a href=
+      "unofficial/errata-corrected-r7rs-html.zip">R<sup>7</sup>RS
+      Small Edition</a></p>
+      <p><b>Unofficial documents with errata corrected (browse on
+      the web):</b><br>
+      <a href=
+      "unofficial/errata-corrected-r7rs/small.html">R<sup>7</sup>RS
+      Small Edition</a></p>
+    </div>
+    <div class="round-box gray-box">
+      <p><b><a href=
+      "https://github.com/johnwcowan/r7rs-work/blob/master/R7RSSmallErrata.md">
+      Author's list of errata</a></b></p>
+      <p><b><a href="http://r7rs.org/">Author's home
+      page</a></b></p>
+      <p><b><a href=
+      "https://github.com/johnwcowan/r7rs-spec">Author's version
+      control repository</a></b></p>
+    </div>
     <!-- TO DO: Include links to the charter of R7RS Large. The link
     at scheme-reports.org is broken.-->
   </section>
   <section id="r6rs" class="round-box red-box">
     <h3><b>Revised<sup>6</sup> Report on the Algorithmic Language
     Scheme (2007)</b></h3>
-    <p>Abbreviated <b>R<sup>6</sup>RS</b></p>
-    <p>R<sup>6</sup>RS abandoned the simplicity of R<sup>5</sup>RS
-    and shipped a more full-featured language. Error situations are
-    much more closely specified; a formal hierarchy of condition
-    (exception) types is given.</p>
+    <p>Abbreviated <b>R<sup>6</sup>RS</b>, this standard abandoned
+    the simplicity of R<sup>5</sup>RS and shipped a more
+    full-featured language. Error situations are much more closely
+    specified; a formal hierarchy of condition (exception) types is
+    given.</p>
     <p>Features procedural macros via <code>syntax-case</code>;
     hash tables; custom ports, transcoding and endianness; and a
     much larger standard library.</p>
     <p>This is the first standard with a library system, enabling
     programmers to share libraries that work out-of-the-box on
     multiple Scheme implementations.</p>
-    <p><a href="http://www.r6rs.org/">home page</a></p>
-    <p>Documents:</p>
-    <ul>
-      <li>
-        <a href="browse/r6rs/r6rs.html">R6RS</a>
-      </li>
-      <li>
-        <a href="browse/r6rs/r6rs-lib.html">R6RS (library)</a>
-      </li>
-      <li>
-        <a href="browse/r6rs/r6rs-app.html">R6RS (appendices)</a>
-      </li>
-      <li>
-        <a href="browse/r6rs/r6rs-rationale.html">R6RS
-        (rationale)</a>
-      </li>
-    </ul>
-    <table class="table">
-      <tr>
-        <th>Official version</th>
-        <th>Unofficial errata-corrected version</th>
-      </tr>
-      <tr>
-        <td>
-          <a href="http://www.r6rs.org/final/r6rs.pdf">base</a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <a href=
-          "http://www.r6rs.org/final/r6rs-lib.pdf">libraries</a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <a href=
-          "http://www.r6rs.org/final/r6rs-app.pdf">appendices</a>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <a href=
-          "http://www.r6rs.org/final/r6rs-rationale.pdf">rationale</a>
-        </td>
-        <td></td>
-      </tr>
-    </table>
+    <p><b>What's new:</b> <code>library</code> definitions,
+    <code>syntax-case</code> macros, condition type hierarchy, hash
+    tables, custom ports, Unicode and transcoding, endianness</p>
+    <div class="round-box gray-box">
+      <p><b>Official documents (PDF):</b><br>
+      <a href="official/r6rs.pdf">R<sup>6</sup>RS</a>, <a href=
+      "official/r6rs-lib.pdf">Standard Libraries</a>, <a href=
+      "official/r6rs-app.pdf">Non-Normative Appendices</a>,
+      <a href="official/r6rs-rationale.pdf">Rationale</a></p>
+    </div>
+    <div class="round-box gray-box">
+      <p><b>Unofficial documents with errata corrected
+      (PDF):</b><br>
+      <a href=
+      "unofficial/errata-corrected-r6rs.pdf">R<sup>6</sup>RS</a>,
+      <a href="unofficial/errata-corrected-r6rs-lib.pdf">Standard
+      Libraries</a>, <a href=
+      "unofficial/errata-corrected-r6rs-app.pdf">Non-Normative
+      Appendices</a>, <a href=
+      "unofficial/errata-corrected-r6rs-rationale.pdf">Rationale</a></p>
+      <p><b>Unofficial documents with errata corrected (browse on
+      the web):</b><br>
+      <a href=
+      "unofficial/errata-corrected-r6rs/r6rs.html">R<sup>6</sup>RS</a>,
+      <a href=
+      "unofficial/errata-corrected-r6rs/r6rs-lib.html">Standard
+      Libraries</a>, <a href=
+      "unofficial/errata-corrected-r6rs/r6rs-app.html">Non-Normative
+      Appendices</a>, <a href=
+      "unofficial/errata-corrected-r6rs/r6rs-rationale.html">Rationale</a></p>
+    </div>
+    <div class="round-box gray-box">
+      <p><b><a href="http://www.r6rs.org/r6rs-errata.html">Author's
+      list of errata</a></b></p>
+      <p><b><a href="http://www.r6rs.org/">Author's home
+      page</a></b></p>
+      <p>Author's version control repository</p>
+    </div>
   </section>
   <h2>Classic standards</h2>
   <p>These standards present the core Scheme syntax and semantics
@@ -139,9 +147,18 @@
     is a touchstone of the Scheme community and is considered an
     exemplar of a concise and expressive language specification in
     other communities as well.</p>
-    <p><a href="browse/r5rs/">R5RS HTML</a></p>
-    <p><a href=
-    "http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf">PDF</a></p>
+    <p><b>What's new:</b> <code>syntax-rules</code> macros</p>
+    <div class="round-box gray-box">
+      <p><b>Official documents (PDF):</b> <a href=
+      "official/r5rs.pdf">R5RS</a></p>
+    </div>
+    <div class="round-box gray-box">
+      <p><b>Browse:</b> <a href="browse/r5rs/">HTML</a></p>
+      <p><b>Download:</b> <a href="unofficial/r5rs-html.zip">HTML
+      zip file</a>, <a href="official/r5rs.pdf">PDF</a>, <a href=
+      "official/r5rs.dvi">DVI</a>, <a href=
+      "official/r5rs.ps">PostScript</a></p>
+    </div>
   </section>
   <section id="r4rs" class="round-box gray-box">
     <h3>Revised<sup>4</sup> Report on the Algorithmic Language
@@ -163,16 +180,15 @@
     PDF</a>, PS, DVI, HTML</p>
   </section>
   <h2>More information</h2>
-  <p><b><a href="early/">Early standards</a></b></p>
-  <p><b><a href="formal/">Formal standards (ISO and
-  IEEE)</a></b></p>
-  <p><b><a href="process/">Standardization process</a></b></p>
+  <h3><a href="early/">Early standards</a></h3>
+  <h3><a href="formal/">Formal standards (ISO and IEEE)</a></h3>
+  <h3><a href="process/">Standardization process</a></h3>
   <div class="round-box gray-box">
     <p><b>See also:</b> <a href=
     "https://research.scheme.org/">Scheme research</a>, especially
     the <a href=
-    "https://research.scheme.org/lambda-papers/"><em>lambda</em>
-    papers</a> from MIT.</p>
+    "https://research.scheme.org/lambda-papers/"><em>lambda
+    papers</em></a> from MIT.</p>
   </div>
   <hr>
   <p><a href="about/">About
