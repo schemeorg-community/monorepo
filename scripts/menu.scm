@@ -31,4 +31,4 @@
   (disp)
   (disp))
 
-(for-each display-menu items)
+(for-each display-menu (cons #f items))
