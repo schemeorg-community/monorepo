@@ -2,4 +2,4 @@
 set -eu
 cd "$(dirname "$0")"
 cd ..
-rsync -vr shared/ standards/ alpha.servers.scheme.org:/production/standards/www/
+rsync -crv shared/ standards/ alpha.servers.scheme.org:/production/standards/www/
