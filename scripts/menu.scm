@@ -1,7 +1,7 @@
 (import (scheme base) (scheme write))
 
 (define items
-  '(("Home"             "https://www.staging.scheme.org/")
+  '(("Home"             "https://www.scheme.org/")
     ("Docs"             "https://doc.scheme.org/")
     ("Community"        "https://community.scheme.org/")
     ("Standards"        "https://standards.scheme.org/")
