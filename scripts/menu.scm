@@ -5,7 +5,7 @@
     ("Docs"             "https://doc.scheme.org/")
     ("Community"        "https://community.scheme.org/")
     ("Standards"        "https://standards.scheme.org/")
-    ("Implementations"  "https://implementations.scheme.org/")))
+    ("Implementations"  "https://get.scheme.org/")))
 
 (define item-title car)
 (define item-url cadr)
