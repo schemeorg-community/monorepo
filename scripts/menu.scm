@@ -2,7 +2,7 @@
 
 (define items
   '(("Home"             "https://www.scheme.org/")
-    ("Docs"             "https://doc.scheme.org/")
+    ("Docs"             "https://docs.scheme.org/")
     ("Community"        "https://community.scheme.org/")
     ("Standards"        "https://standards.scheme.org/")
     ("Implementations"  "https://get.scheme.org/")))
