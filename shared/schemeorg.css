@@ -25,8 +25,8 @@ sup {
   line-height: 0;
 }
 
-.front-page-group table {
-  width: 100%;
+img {
+  vertical-align: middle;
 }
 
 table {
@@ -40,6 +40,25 @@ th {
 th,
 td {
   vertical-align: baseline;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.no-border {
+  border: none;
+}
+
+table.no-border th,
+table.no-border td {
+  border: none;
+}
+
+.front-page-group table {
+  width: 100%;
 }
 
 h1#logo {
@@ -156,4 +175,49 @@ a.offsite:visited {
   .menu li {
     display: inline-block;
   }
+}
+
+/* Syntax highlighting: */
+
+code.colorize span.default {
+  color: black;
+}
+
+code.colorize span.symbol {
+  color: blue;
+}
+
+code.colorize span.string {
+  color: green;
+}
+
+code.colorize span.character {
+  color: green;
+}
+
+code.colorize span.comment {
+  color: gray;
+}
+
+/* Monochromatic Color gradient from <https://www.colorhexa.com/ff0000> */
+code.colorize span.paren1 {
+  color: #b30000;
+}
+code.colorize span.paren2 {
+  color: #cc0000;
+}
+code.colorize span.paren3 {
+  color: #e60000;
+}
+code.colorize span.paren4 {
+  color: #ff0000;
+}
+code.colorize span.paren5 {
+  color: #ff1a1a;
+}
+code.colorize span.paren6 {
+  color: #ff3333;
+}
+code.colorize span.paren7 {
+  color: #ff4d4d;
 }
