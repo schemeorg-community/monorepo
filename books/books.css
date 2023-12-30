@@ -1,6 +1,7 @@
 table.book {
   border: none;
   margin: 0.5em;
+  width: 100%;
 }
 
 table.book td {
@@ -9,6 +10,11 @@ table.book td {
   vertical-align: top;
 }
 
-table.book img {
+table.book td.cover {
+  vertical-align: middle;
+  width: 1%;  /* No wider than the book cover image. */
+}
+
+table.book td.cover img {
   border: 1px solid gray;
 }
