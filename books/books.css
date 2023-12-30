@@ -1,0 +1,14 @@
+table.book {
+  border: none;
+  margin: 0.5em;
+}
+
+table.book td {
+  border: none;
+  padding: 0.5em;
+  vertical-align: top;
+}
+
+table.book img {
+  border: 1px solid gray;
+}
