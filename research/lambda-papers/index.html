@@ -1,31 +1,184 @@
-<h1>The Original 'Lambda Papers' by Guy Steele and Gerald Sussman</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lambda Papers</title>
+  <link rel="stylesheet" href="/schemeorg.css">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon/favicon.svg" sizes="any" type=
+  "image/svg+xml">
+</head>
+<body>
+  <header>
+    <ul class="menu">
+      <li>
+        <a href="https://www.scheme.org/">Home</a>
+      </li>
+      <li>
+        <a href="https://docs.scheme.org/">Docs</a>
+      </li>
+      <li>
+        <a href="https://community.scheme.org/">Community</a>
+      </li>
+      <li>
+        <a href="https://standards.scheme.org/">Standards</a>
+      </li>
+      <li>
+        <a href="https://get.scheme.org/">Implementations</a>
+      </li>
+    </ul>
+  </header>
+	
+<h1>The Lambda Papers</h1>
 
-<p>Sussman, Gerald Jay and Steele, Guy L. <strong>Scheme: An Interpreter For Extended Lambda Calculus</strong>. December 1975. <a href="https://dspace.mit.edu/bitstream/handle/1721.1/5794/AIM-349.pdf">[PDF]</a></p>
+	<p>Papers by Guy Steele and Gerald Sussman published as AI Memos
+		by the MIT Artificial Intelligence Laboratory between
+		December 1975 and March 1979.</p>
+	<p>As noted in <a href="https://standards.scheme.org/early/">Early standards</a>, 
+		the tone of these papers is relatively informal and their typesetting targetted 1970s
+		computer printing technology. </p>
+	<p>HTML and PDF transcriptions with links are now available,
+		in addition to the MIT scans of original printed copies (<a href="#note1">Note 1</a>)</p>
 
-<p>Inspired by ACTORS, we have implemented an interpreter for a LISP-like language, SCHEME, based on the lambda calculus, but extended for side effects, multiprocessing, and process synchronization. The purpose of this implementation is tutorial. We wish to: (1) alleviate the confusion caused by Micro-PLANNER, CONNIVER, etc. by Clarifying the embedding of non-recursive control structures in a recursive host language like LISP. (2) explain how to use these control structures, independent of such issues as pattern matching and data base manipulation. (3) have a simple concrete experimental. domain for certain issues of programming semantics and style. This paper is organized into sections. The first section is a short "reference manual" containing specifications for all the unusual features of SCHEME. Next, we present a sequence of programming examples which illustrate various programming styles, and how to use them. This will raise certain issues of semantics which we will try to clarify with lambda calculus in the third section. In the fourth section we will giva a general discussion of the issues facing an implementor of an interpreter for a language based on lambda calculus. Finally, we will present a completely annotated interpreter for SCHEME, written in MacLISP, to acquaint programmers with the tricks of the trade of implementing non-recursive control structures in a recursive language like LISP.</p>
+<p>Sussman, Gerald Jay and Steele, Guy L. 
+	<strong>SCHEME: An Interpreter For Extended Lambda Calculus</strong>. AIM-349, December 1975. 
+	[<a href="lambda-papers-scheme-report.html">HTML</a>, 
+	 <a href="lambda-papers-scheme-report.pdf">PDF</a>] (<a href="#note2">Note 2</a>)
+	<blockquote>
+		"Inspired by ACTORS, we have implemented an interpreter for a LISP-like language, 
+	  SCHEME, based on the lambda calculus, but extended for side effects, multiprocessing, and 
+	  process synchronization..." 
+  </blockquote></p>
 
-<p>Steele, Guy L and Sussman, Gerald Jay. <strong>Lambda: The Ultimate Imperative</strong>. March 1976. <a href="https://apps.dtic.mil/sti/pdfs/ADA030751.pdf">[PDF]</a></p>
+<p>Steele, Guy L and Sussman, Gerald Jay. 
+	<strong>LAMBDA: The Ultimate Imperative</strong>. AIM-353, March 1976. 
+	[<a href="lambda-papers-ltu-imperative-extract.html">HTML</a>, 
+	 <a href="lambda-papers-ltu-imperative-extract.pdf">PDF</a>]
+	<blockquote>
+		"We demonstrate how to model the following common programming constructs in terms of an 
+		applicative order language similar to LISP: - Simple Recursion - Iteration - Compound 
+		Statements and Expressions - GO TO and Assignment - Continuation-Passing - Escape 
+		Expressions - Fluid Variables - Call by Name, Call by Need, and Call by Reference..."
+  </blockquote></p>
+		
+<p>Steele, Guy L. <strong>LAMBDA The Ultimate Declarative</strong>. AIM-379, November 1976. 
+	[<a href="lambda-papers-ltu-declarative.html">HTML</a>, 
+	 <a href="lambda-papers-ltu-declarative.pdf">PDF</a>]
+	<blockquote>
+		"In this paper, a sequel to LAMBDA: The Ultimate Imperative, a new view of LAMBDA as a 
+		renaming operator is presented and contrasted with the usual functional view taken by 
+		LISP..."
+  </blockquote></p>
 
-<p>We demonstrate how to model the following common programming constructs in terms of an applicative order language similar to LISP: - Simple Recursion - Iteration - Compound Statements and Expressions - GO TO and Assignment - Continuation-Passing - Escape Expressions - Fluid Variables - Call by Name, Call by Need, and Call by Reference. The models require only (possibly self-referent) lambda application, conditionals, and (rarely) assignment. No complex data structures such as stacks are used. The models are transparent, involving only local syntactic transformations. Some of these models, such as those for GO TO and assignment, are already well known, and appear in the work of Landin, Reynolds, and others. The models for escape expressions, fluid variables, and call by need with side effects are new. This paper is partly tutorial in intent, gathering all the models together for purposes of context.</p>
+<p>Steele, Guy L. <strong>Compiler Optimization Based on Viewing LAMBDA as RENAME plus GOTO
+</strong>. May 1977.
+	[<a href="lambda-papers-compiler-optimization.html">HTML</a>, 
+	 <a href="lambda-papers-compiler-optimization.pdf">PDF</a>] (<a href="#note3">Note 3</a>)
+	<blockquote>
+    "We have developed a compiler for the lexically-scoped dialect of LISP known as SCHEME. 
+		The compiler knows relatively little about specific data manipulation primitives such as
+	  arithmetic operators, but concentrates on general issues of environment and control..."
+  </blockquote></p>
 
-<p>Steele, Guy L. <strong>Lambda: The Ultimate Declarative</strong>. November 1976. <a href="https://apps.dtic.mil/sti/pdfs/ADA034090.pdf">[PDF]</a></p>
+<p>Steele, Guy L. <strong>Debunking the "Expensive Procedure Call" Myth or, Procedure Call 
+	Implementations Considered Harmful or, LAMBDA: The Ultimate GOTO</strong>. AIM-443, October 1977. 
+	[<a href="lambda-papers-ltu-goto.html">HTML</a>, 
+	 <a href="lambda-papers-ltu-goto.pdf">PDF</a>]
+	<blockquote>
+    "Folklore states that GOTO statements are "cheap", while procedure calls are "expensive". 
+		This myth is largely a result of poorly designed language implementations..."	
+  </blockquote></p>
+	
+<p>Steele, Guy L and Sussman, Gerald Jay. 
+	<strong>The Revised Report on SCHEME A Dialect of LISP</strong>. AIM-452, January 1978.
+  [<a href="lambda-papers-revised-report.html">HTML</a>, 
+	 <a href="lambda-papers-revised-report.pdf">PDF</a>]
+	<blockquote>
+	  "SCHEME is a dialect of LISP. It is an expression-oriented, applicative order, 
+		interpreter-based language which allows one to manipulate programs as data..."
+  </blockquote></p>
 
-<p>In this paper, a sequel to LAMBDA: The Ultimate Iaperative, a new view of LAMBDA as a renaming operator is presented and contrasted with the usual functional view taken by LISP. This view, combined with the view of function invocation as a kind of generalized GOTO, leads to several new insights into the nature of the LISP evaluation mechanism and the symmetry between form and function, evaluation and application, and control and environment. It also complements Hewitt's actors theory nicely, explaining the intent of environment manipulation as cleanly, generally, and intuitively as the actors theory explains control structures. The relationship between functional and continuation-passing styles of programming is also clarified. This view of LAMBDA leads directly to a number of specific techniques for use by an optimizing compiler: (1) Temporary locations and user-declared variables may be allocated in a uniform manner. (2) Procedurally defined data structures may compile into code as good as would be expected for data defined by the sore usual declarative means. (3) Lambda-calculus-theoretic models of such constructs as GOTO, DO loops, call-by-name, etc. way be used directly as macros, the expansion of which may then compile into code as good as that produced by compilers which are designed especially to handle GOTO, DO, etc. The necessary characteristics of such a compiler designed according to this philosophy are discussed. Such a compiler is to be built in the near future as a testing ground for these ideas.</p>
+<p>Sussman, Gerald Jay and Steele, Guy L. <strong>The Art of the Interpreter or, The 
+	Modularity Complex (Parts Zero, One, and Two)</strong>. AIM-453, May 1978. 
+  [<a href="lambda-papers-interpreter.html">HTML</a>, 
+	 <a href="lambda-papers-interpreter.pdf">PDF</a>]
+	<blockquote>
+    "We examine the effects of various language design decisions on the programming styles 
+		available to a user of the language, with particular emphasis on the ability to 
+		incrementally construct modular systems. At each step we exhibit an interactive 
+		meta-circular interpreter for the language under consideration..."
+  </blockquote></p>
 
-<p>Steele, Guy L. <strong>Debunking the "Expensive Procedure Call" Myth or, Procedure Call Implementations Considered Harmful or, Lambda: The Ultimate GOTO</strong>. October 1977. <a href="https://apps.dtic.mil/sti/pdfs/ADA062381.pdf">[PDF]</a></p>
+<p>Steele, Guy L. <strong>RABBIT: A compiler for SCHEME</strong>. AITR-474, May 1978. 
+  [<a href="lambda-papers-rabbit.html">HTML</a>, 
+	 <a href="lambda-papers-rabbit.pdf">PDF</a>]
+	<blockquote>
+    "We have developed a compiler for the lexically-scoped dialect of LISP known as SCHEME. 
+		The compiler knows relatively little about specific data manipulation primitives such as 
+		arithmetic operators, but concentrates on general issues of environment and control..."
+  </blockquote></p>
+		
+<p>Steele, Guy L and Sussman, Gerald Jay. <strong>Design of LISP-based Processors, 
+	or SCHEME: A Dielectric LISP, or Finite Memories Considered Harmful, or LAMBDA: The 
+	Ultimate Opcode</strong>. AIM-514, March 1979. 
+  [<a href="lambda-papers-ltu-opcode/ltu8-opcode.html">HTML</a>, 
+	 <a href="lambda-papers-ltu-opcode/ltu8-opcode.pdf">PDF</a>]
+	<blockquote>
+    "We present a design for a class of computers whose 'instruction sets' are based on LISP. 
+		LISP, like traditional stored-program machine languages and unlike most high-level 
+		languages, conceptually stores programs and data in the same way and explicitly allows 
+		programs to be manipulated as data. LISP is therefore a suitable language around which 
+		to design a stored-program computer architecture..."
+  </blockquote></p>
 
-<p>Folklore states that GOTO statements are "cheap", while procedure calls are "expensive". This myth is largely a result of poorly designed language implementations. The historical growth of this myth is considered. Both theoretical ideas and an existing implementation are discussed which debunk this myth. It is shown that the unrestricted use of procedure calls permits great stylistic freedom. In particular, any flowchart can be written as a "structured" program without introducing extra variables. The difficulty with the GOTO statement and the procedure call is characterized as a conflict between abstract programming concepts and concrete language constructs.</p>
+<h4>Notes</h4>
+ <ol>
+	  <li id="note1">PDF scans of original printed copies:
+			<ul>
+			  <li>Scheme: An Interpreter For Extended Lambda Calculus (AIM-349, December 1975)
+				[<a href="https://standards.scheme.org/official/r0rs.pdf">PDF</a>]</li>
+			  <li>Lambda: The Ultimate Imperative (AIM-353, March 1976)
+				[<a href="https://apps.dtic.mil/sti/pdfs/ADA030751.pdf">PDF</a>]</li>
+				<li>Lambda The Ultimate Declarative (AIM-379, November 1976)
+				[<a href="https://apps.dtic.mil/sti/pdfs/ADA034090.pdf">PDF</a>]</li>
+				<li>Debunking the "Expensive Procedure Call" Myth or, Procedure Call Implementations 
+				Considered Harmful or, LAMBDA: The Ultimate GOTO (AIM-443, October 1977)
+			  [<a href="https://apps.dtic.mil/sti/pdfs/ADA062381.pdf">PDF</a>]</li>
+		    <li>The Revised Report on SCHEME A Dialect of LISP (AIM-452, January 1978)
+				[<a href="https://standards.scheme.org/official/r1rs.pdf"></a>]</li>
+			  <li>The Art of the Interpreter or, The Modularity Complex (Parts Zero, One, and Two) 
+				(AIM-453, May 1978)
+			  [<a href="https://dspace.mit.edu/bitstream/handle/1721.1/6094/AIM-453.pdf">PDF</a>]</li>
+		    <li>RABBIT: A Compiler for SCHEME (AITR-474, May 1978)
+				[<a href="https://dspace.mit.edu/bitstream/handle/1721.1/6913/AITR-474.pdf">PDF</a>]</li>
+		  	<li>Design of LISP-based Processors, or SCHEME: A Dielectric LISP, or Finite Memories 
+				Considered Harmful, or LAMBDA: The Ultimate Opcode (AIM-514, March 1979)
+			  [<a href="https://dspace.mit.edu/bitstream/handle/1721.1/5731/AIM-514.pdf">PDF</a>]</li>
+			</ul>
+		</li>
 
-<p>Sussman, Gerald Jay and Steele, Guy L. <strong>The Art of the Interpreter or, the Modularity Complex</strong>. May 1978. <a href="https://dspace.mit.edu/bitstream/handle/1721.1/6094/AIM-453.pdf">[PDF]</a></p>
+<li id="note2">The first report was republished in 1998 with additional notes and retrospective commentary:
+	<ul>
+ 	<li>Sussman, G.J., Steele, G.L. <strong>Scheme: A Interpreter for Extended Lambda Calculus</strong>.
+  Higher-Order and Symbolic Computation 11(4):405-439 (December 1998).
+  [<a href="https://www.researchgate.net/publication/227098423_Scheme_A_Interpreter_for_Extended_Lambda_Calculus"
+	>PDF</a>]</li>
+  <li>Sussman, G.J., Steele, G.L. <strong>The First Report on Scheme Revisited</strong>.
+  Higher-Order and Symbolic Computation 11(4):399–404 (December 1998).
+  [<a href="https://doi.org/10.1023/A:1010079421970">PDF</a>]</li>
+</ul></li>
+	
+<li id="note3">Published in
+	<ul>
+	<li><strong>Artificial Intelligence, an MIT Perspective, Volume 2</strong>
+	(edited by Patrick Henry Winston and Richard Henry Brown, MIT Press 1979)
+	[<a href="https://archive.org/details/artificialintell0002unse">archive.org</a>]</li>
+  </ul>
+</li>
+	
+</ol>
 
-<p>We examine the effects of various language design decisions on the programming styles available to a user of the language, with particular emphasis on the ability to incrementally construct modular systems. At each step we exhibit an interactive meta-circular interpreter for the language under consideration. Each new interpreter is the result of an incremental change to a previous interpreter. We explore the consequences of various variable binding disciplines and the introduction of side effects. We find that dynamic scoping is unsuitable for constructing procedural abstractions, but has another role as an agent of modularity, being a structured form of side effect. More general side effects are also found to be necessary to promote modular style. We find that the notion of side effect and the notion of equality (object identity) are mutually constraining; to define one is to define the other. The interpreters we exhibit are all written in a Simple dialect of LISP, and all implement LISP-like languages. A subset of these inter- preters constitute a partial historical reconstruction of the actual evolution of LISP.</p>
 
-<p>Steele, Guy L. <strong>Rabbit: A compiler for Scheme</strong>. May 1978. <a href="https://dspace.mit.edu/bitstream/handle/1721.1/6913/AITR-474.pdf">[PDF]</a></p>
-
-<p>We have developed a compiler for the lexically-scoped dialect of LISP known as SCHEME. The compiler knows relatively little about specific data manipulation primitives such as arithmetic operators, but concentrates on general issues of environment and control. Rather than having specialized knowledge about a large variety of control and environment constructs, the compiler handles only a small basis set which reflects the semantics of lambda-calculus. All of the traditional imperative constructs, such as sequencing, assignment, looping, GOTO, as well as many standard LISP constructs such as AND, OR, and COND, are expressed in macros in terms of the applicative basis set. A small number of optimization techniques, coupled with the treatment of function calls as GOTO statements, serve to produce code as good as that produced by more traditional compilers. The macro approach enables speedy implementation of new constructs as desired without sacrificing efficiency in the generated code. A fair amount of analysis is devoted to determining whether environments may be stack-allocated or must be heap-allocated. Heap-allocated environments are necessary in general because SCHEME (unlike Algol 60 and Algol 68, for example) allows procedures with free lexically scoped variables to be returned as the values of other procedures; the Algol stack-allocation environment strategy does not suffice. The methods used here indicate that a heap-allocating generalization of the "display" technique leads to an efficient implementation of such "upward funargs". Moreover, compile-time optimization and analysis can eliminate many "funargs" entirely, and so far fewer environment structures need be allocated at run time than might be expected. A subset of SCHEME (rather than triples, for example) serves as the representation intermediate between the optimized SCHEME code and the final output code; code is expressed in this subset in the so-called continuation-passing style. As a subset of SCHEME, it enjoys the same theoretical properties; one could even apply the same optimizer used on the input code to the intermediate code. However, the subset is so chosen that all temporary quantities are made manifest as variables, and no control stack is needed to evaluate it. As a result, this apparently applicative representation admits an imperative interpretation which permits easy transcription to final imperative machine code. These qualities suggest that an applicative language like SCHEME is a better candidate for an UNCOL than the more imperative candidates proposed to date.</p>
-
-<p>Steele, Guy L and Sussman, Gerald Jay. <strong>Design of Lisp-based Processors, or Scheme: A Dielectric Lisp, or Finite Memories Considered Harmful, or Lambda: The Ultimate Opcode</strong>. March 1979. <a href="https://dspace.mit.edu/bitstream/handle/1721.1/5731/AIM-514.pdf">[PDF]</a></p>
-
-<p>We present a design for a class of computers whose 'instruction sets' are based on LISP. LISP, like traditional stored-program machine languages and unlike most high-level languages, conceptually stores programs and data in the same way and explicitly allows programs to be manipulated as data. LISP is therefore a suitable language around which to design a stored-program computer architecture. LISP differs from traditional machine languages in that the program/data storage is conceptually an unordered set of linked record structures of various sizes, rather than an ordered, indexable vector of integers or bit fields of fixed size. The record structures can be organized into trees or graphs. An instruction set can be designed for programs expressed as such trees. A processor can interpret these trees in a recursive fashion, and provide automatic storage management for the record structures. We describe here the basic ideas behind the architecture, and for concreteness give a specific instruction set (on which variations are certainly possible). We also discuss the similarities and differences between these ideas and those of traditional architectures. A prototype VLSI microprocessor has been designed and fabricated for testing. It is a small-scale version of the ideas presented here, containing a sufficiently complete instruction interpreter to execute small programs, and a rudimentary storage allocator. We intend to design and fabricate a full-scale VLSI version of this architecture in 1979.</p>
-
-<p>Steele, Guy L. <strong>Compiler Optimization Based on Viewing LAMBDA as RENAME + GOTO</strong>. <em>AI: An MIT Perspective</em>. 1980</p>
+</body>
+</html>

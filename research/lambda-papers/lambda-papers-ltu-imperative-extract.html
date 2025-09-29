@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Guy Lewis Steele Jr" />
+  <meta name="author" content="Gerald Jay Sussman" />
+  <title>Steele and Sussman   March 10, 1976 – LAMBDA: The Ultimate
+Imperative</title>
+  <style>
+html {
+font-size: 12pt;
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style>
+code {
+font-family: Greybeard, Menlo, Monaco, Consolas, "Lucida Console", monospace }
+body {
+font-family: Bodoni, serif;
+text-wrap: pretty;
+max-width: 40em;
+padding-right: 30px;
+overflow-wrap: normal;
+line-height: 1.2;
+hyphens: none }
+a:link {
+color: #1a1a1a;
+text-decoration: underline;
+}
+a:visited {
+color: #1a1a1a;
+}
+a:hover {
+text-decoration: underline;
+}
+.xl {
+font-size: 1.5em;
+font-style: bold }
+h1 {
+font-size: 1.2em }
+h2 {
+font-weight: bold;
+font-size: 1em }
+h3 {
+font-size: 1em;
+font-style: normal;
+font-weight: bold;
+margin-top: 0.85em;
+margin-bottom: 0 }
+h4 { 
+font-size: 1em;
+font-style: normal;
+font-weight: 600;
+margin-top: 0.85em;
+margin-bottom: 0 }
+h4 + p {
+margin-top: 0;
+margin-bottom: 0.85em }
+#notes p, #references p, #bibliography p {
+margin-top: 0 }
+pre code { 
+font-size: 75% }
+p code, .line-block code, figcaption code, h3 code, dt code { 
+font-size: 85%;
+text-wrap: nowrap }
+hr {
+margin-top: 3em }
+.sc { 
+font-size: 92%;
+text-wrap: nowrap }
+.in {
+margin-left: 1em }
+.fr {
+float: right }
+li::marker {
+content: '(' counters(list-item) ') '; }
+div.box {
+padding: 0 0 0.5em 1em;
+border: 1px solid }
+figure {
+margin: 1em 0;
+width: 100% }
+figcaption {
+padding-top: 1em;
+text-align: center }
+
+@media print {
+hr {
+page-break-before: always }
+div.box, div.npb, section.npb, pre {
+page-break-inside: avoid }
+}
+@view-transition {
+navigation: auto }
+</style>
+</head>
+<body>
+<p><div style="text-align: center"> MASSACHUSETTS INSTITUTE OF
+TECHNOLOGY<br />
+ARTIFICIAL INTELLIGENCE LABORATORY </div></p>
+<p>AI Memo No. 353 <span class="fr">March 10, 1976</span></p>
+<p><div style="text-align: center">
+<span style="font-size: 1.5em">LAMBDA</span></p>
+<p>THE ULTIMATE IMPERATIVE</p>
+<p>by</p>
+<p>Guy Lewis Steele Jr. and Gerald Jay Sussman </div></p>
+<section id="abstract" class="level1">
+<h1>Abstract:</h1>
+<div style="line-height: 1.1">
+<p>We demonstrate how to model the following common programming
+constructs in terms of an applicative order language similar to <span class="sc">LISP</span>:</p>
+<div class="line-block">      Simple Recursion<br />
+      Iteration<br />
+      Compound Statements and Expressions<br />
+      <span class="xl">. . .</span></div>
+<p>{{Transcription of <a href="https://dspace.mit.edu/handle/1721.1/5790" title="dspace.mit.edu/handle/1721.1/5790">AIM-353</a> by Roger Turner;
+links added, including cite backlinks in Notes and Bibliography.}}</p>
+</div>
+</section>
+<section id="contents" class="level1">
+<h1>Contents</h1>
+<div style="line-height: 1.4">
+<div class="line-block"><a href="#introduction">Introduction</a><br />
+<span class="xl">. . .</span><br />
+1.1.   <a href="#simple-recursion">Simple Recursion</a><br />
+<span class="xl">. . .</span><br />
+2.2.   <a href="#the-go-to-statement">The <span class="sc">GO TO</span>
+Statement</a><br />
+<span class="xl">. . .</span><br />
+4.3.   <a href="#fast-call-by-name">Fast Call-By-Name</a><br />
+<span class="xl">. . .</span><br />
+<a href="#conclusions">Conclusions</a><br />
+<a href="#notes">Notes</a><br />
+<a href="#bibliography">Bibliography</a></div>
+</div>
+<p><hr></p>
+<blockquote>
+<p><em>People who like this sort of thing will find this is the sort of
+thing they like.</em><br />
+– <em>Abraham Lincoln</em></p>
+</blockquote>
+</section>
+<section id="introduction" class="level1">
+<h1><a href="#contents" title="Go to Contents">Introduction</a></h1>
+<p>We catalogue a number of common programming constructs. For each
+construct we examine “typical” usage in well-known programming
+languages, and then capture the essence of the semantics of the
+construct in terms of a common meta-language.</p>
+<p>The lambda calculus {Note <a href="#alonzowins" id="xalonzowins" title="The lambda calculus was originally developed by Alonzo Church as a formal axiomatic system of logic. [Church 41] Happily, it may be re-interpreted in several interesting ways as a model for computation.">Alonzowins</a>}
+is often used as such a meta-language. Lambda calculus offers clean
+semantics, but it is clumsy because it was designed to be a
+<em>minimal</em> language rather than a <em>convenient</em> one. All
+lambda calculus “functions” must take exactly one “argument”; the only
+“data type” is lambda expressions; and the only “primitive operation” is
+variable substitution. While its utter simplicity makes lambda calculus
+ideal for logicians, it is too primitive for use by programmers. The
+meta-language we use is a programming language called <span class="sc">SCHEME</span> {Note <a href="#schemepaper" id="xschemepaper" title="SCHEME is fully described in [Sussman 75], which contains a complete reference manual as well as a fully documented implementation of the language in MacLISP [Moon 74].">Schemepaper</a>}
+which is based on lambda calculus.</p>
+<p><span class="sc">SCHEME</span> is a dialect of <span class="sc">LISP</span>. [<a href="#mccarthy-62" id="xmccarthy-62" title="[1] McCarthy et al 1962, LISP 1.5 Programmer’s Manual">McCarthy
+62</a>] It is an expression-oriented, applicative order,
+interpreter-based language which allows one to manipulate programs as
+data.</p>
+<p><span class="xl">. . .</span></p>
+<section id="simple-recursion" class="level2">
+<h2>1.1. <a href="#contents" title="Go to Contents">Simple
+Recursion</a></h2>
+<p>One of the easiest ways to produce a looping control structure is to
+use a recursive function, one which calls itself to perform a
+subcomputation. For example, the familiar factorial function may be
+written recursively in <span class="sc">ALGOL</span>:</p>
+<div class="line-block">    <strong>integer</strong>
+<strong>procedure</strong> <em>fact</em>(<em>n</em>);
+<strong>value</strong> <em>n</em>; <strong>integer</strong>
+<em>n</em>;<br />
+        <em>fact</em> := <strong>if</strong> <em>n</em>=0
+<strong>then</strong> 1 <strong>else</strong>
+<em>n</em>*<em>fact</em>(<em>n</em>-1);</div>
+<p>The invocation <em>fact</em>(<em>n</em>) computes the product of the
+integers from 1 to <em>n</em> using the identity <span style="text-wrap: nowrap"><em>n</em>! = <em>n</em>(<em>n</em>-1)!
+ (<em>n</em>&gt;0).</span> If <em>n</em> is zero, 1 is returned;
+otherwise <em>fact</em> calls itself recursively to compute
+(<em>n</em>-1)!, then multiplies the result by <em>n</em> and returns
+it.</p>
+<p>This same function may be written in <span class="sc">SCHEME</span>
+as follows:</p>
+<pre><code>  (DEFINE FACT
+     (LAMBDA (N) (IF (= N 0) 1
+                     (* N (FACT (- N 1))))))</code></pre>
+<p><span class="sc">SCHEME</span> does not require an assignment to the
+“variable” <em>fact</em> to return a value as <span class="sc">ALGOL</span> does. The <code>IF</code> primitive is the <span class="sc">ALGOL</span> <strong>if-then-else</strong> rendered in <span class="sc">LISP</span> syntax. Note that the arithmetic primitives are
+prefix operators in <span class="sc">SCHEME</span>.<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="the-go-to-statement" class="level2">
+<h2>2.2. <a href="#contents" title="Go to Contents">The <span class="sc">GO TO</span> Statement</a></h2>
+<p>A more general imperative structure is the compound statement with
+labels and <span class="sc">GO TO</span>s. Consider the following code
+fragment due to Jacopini, taken from Knuth: [<a href="#knuth-74-1-2" id="xknuth1" title="[1] Knuth 1974, Structured Programming with go to Statements">Knuth
+74</a>]<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="fast-call-by-name" class="level2">
+<h2>4.3. <a href="#contents" title="Go to Contents">Fast
+Call-By-Name</a></h2>
+<p>Call-by-need does not fully capture the essence of call-by-name. If a
+side effect occurs between two references of a parameter, the parameter
+will yield the same value if passed call-by-need, but may yield
+different values if passed call-by-name. {Note <a href="#jensensdevice" id="xjensensdevice" title="The technique of repeatedly modifying a variable passed call-by-name in order to produce side effects on another call-by-name parameter is commonly known as Jensen’s device, particularly in the case where the call-by-name parameters are j and a[j]. ...">Jensensdevice</a>}
+For example:</p>
+<div class="line-block">    <strong>begin</strong><br />
+        <strong>real</strong> <em>dx</em>;<br />
+        <strong>real</strong> <strong>procedure</strong>
+<em>integral</em>(<em>lower</em>, <em>upper</em>, <em>exp</em>,
+<em>var</em>)<br />
+            <strong>value</strong> <em>lower</em>, <em>upper</em>;<br />
+            <strong>real</strong> <em>lower</em>, <em>upper</em>,
+<em>exp</em>, <em>var</em>;<br />
+            <strong>begin</strong><br />
+                <strong>real</strong> <em>sum</em>;<br />
+                <em>sum</em> := 0;<br />
+                <strong>for</strong> <em>var</em> := <em>lower</em> +
+(<em>dx</em>/2) <strong>step</strong> <em>dx</em> <strong>until</strong>
+<em>upper</em> <strong>do</strong><br />
+                        <em>sum</em> := <em>sum</em> +
+<em>exp</em>;<br />
+                <em>integral</em> := <em>sum</em>;<br />
+            <strong>end</strong>;<br />
+        <em>dx</em> := .001;<br />
+        <em>print</em>(4 * <em>integral</em>(0, 1,
+<em>dx</em>/(<em>x</em>^2 + 1), <em>x</em>));<br />
+    <strong>end</strong></div>
+<p>prints an approximation to <em>pi</em> by calculating</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mfrac><mrow><mi>d</mi><mi>x</mi></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex"> 4 \int_{0}^{1} \frac{dx}{x^2 + 1} </annotation></semantics></math></p>
+<p>which is four times the arctangent of 1. It depends on the
+call-by-name parameter <em>exp</em> changing value when the variable
+<em>var</em> is changed. This example in fact brings out <em>two</em>
+problems. First, call-by-need does not allow the value of a parameter to
+change when a variable used in the argument expression is modified.
+Second, the example presses the issue of assignment to call-by-name
+parameters.</p>
+<p>The first problem can be fixed by modifying the call-by-need
+mechanism to notice side effects and re-evaluate the parameter if its
+value might have changed. Instead of <code>NEED-THUNK</code>, we use the
+following function:</p>
+<pre><code>  (DEFINE MEMO-THUNK
+          (LAMBDA (THUNK)
+              ((LAMBDA (VALUE SAVED-COUNT)
+                   (LAMBDA ()
+                       (IF (= SAVED-COUNT (GLOBAL-SIDE-EFFECT-COUNT))
+                           VALUE
+                           (BLOCK (ASET &#39;SAVED-COUNT
+                                        (GLOBAL-SIDE-EFFECT-COUNT))
+                                  (ASET &#39;VALUE (THUNK))
+                                  VALUE)))
+              NIL
+              -1))))</code></pre>
+</section>
+</section>
+<section id="conclusions" class="level1">
+<h1><a href="#contents" title="Go to Contents">Conclusions</a></h1>
+<p>We have expressed a number of programming constructs in terms of a
+simple applicative language, <span class="sc">SCHEME</span>, based on
+lambda calculus. It is not surprising that this is possible, since <span class="sc">SCHEME</span> is universal. What is surprising is that the
+translation is so <strong><em>natural</em></strong>. Most of the
+translations are syntactically local. The translated program is
+recognizably equivalent to the original, because the global structure is
+preserved. The translation process does not increase the size of the
+program very much.</p>
+<p>Landin [<a href="#landin-65-1-2-3-4-5-6-7" id="xlan3" title="[3] Landin 1965, A Correspondence between ALGOL 60 and Church’s Lambda-Notation">Landin
+65</a>] and Reynolds [<a href="#reynolds-72-1-2-3-4-5-6" id="xrey4" title="[4] Reynolds 1972, Definitional Interpreters for Higher Order Programming Languages">Reynolds
+72</a>] have used similar techniques to model programming
+constructs.<br />
+<span class="xl">. . .</span></p>
+<p>{Note <a href="#gotophobia" id="xgotophobia" title="The great GO TO controversy was started by Dijkstra in 1968 [Dijkstra 68]. This issue was argued heatedly and came to a head at ACM 72. One of the proponents of GO TO-less programming was Wulf, whose language BLISS was purposely designed without GO TO statements. ...">Gotophobia</a>}<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="notes" class="level1">
+<h1><a href="#contents" title="Go to Contents">Notes</a></h1>
+<section id="alonzowins" class="level4">
+<h4>{Alonzowins} <span class="fr"><a href="#xalonzowins">^</a></span><br />
+</h4>
+<p>The lambda calculus was originally developed by Alonzo Church as a
+formal axiomatic system of logic. [<a href="#church-41-1-2" id="xchurch-411" title="[1] Church 1941, The Calculi of Lambda Conversion">Church 41</a>]
+Happily, it may be re-interpreted in several interesting ways as a model
+for computation.<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="gotophobia" class="level4">
+<h4>{Gotophobia} <span class="fr"><a href="#xgotophobia">^</a></span><br />
+</h4>
+<p>The great <span class="sc">GO TO</span> controversy was started by
+Dijkstra in 1968 <span class="xl">. . .</span><br />
+Knuth presents an extensive history of the <span class="sc">GO TO</span>
+controversy [<a href="#knuth-74-1-2" id="xknuth2" title="[2] Knuth 1974, Structured Programming with go to Statements">Knuth
+74</a>]<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="jensensdevice" class="level4">
+<h4>{Jensensdevice} <span class="fr"><a href="#xjensensdevice">^</a></span><br />
+</h4>
+<p>The technique of repeatedly modifying a variable passed call-by-name
+in order to produce side effects on another call-by-name parameter is
+commonly known as Jensen’s device, particularly in the case where the
+call-by-name parameters are <em>j</em> and <em>a</em>[<em>j</em>]. We
+cannot find any reference to Jensen or who he was, and offer a reward
+for any information leading to the identification, arrest, and
+conviction of said Jensen.<br />
+{{see [<a href="#naur-60" id="xnaur-60" title="[1] Naur 1960, An example of a function designator changing the value of a formal variable">Naur
+60</a>] :-}}<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="landinknewthis" class="level4">
+<h4>{Landinknewthis} <span class="fr"><a href="#xlandinknewthis">^</a></span><br />
+</h4>
+<p>In [<a href="#landin-65-1-2-3-4-5-6-7" id="xlan7" title="[7] Landin1965, A Correspondence between ALGOL 60 and Church’s Lambda-Notation">Landin
+65</a>] Landin uses this same technique to model call-by-name. However,
+he modelled assignment to call-by-name parameters in a way much
+different from the one we use later: he uses L-values rather than an
+extra assignment thunk.<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="schemepaper" class="level4">
+<h4>{Schemepaper} <span class="fr"><a href="#xschemepaper">^</a></span><br />
+</h4>
+<p><span class="sc">SCHEME</span> is fully described in [<a href="#sussman-75-1-2-3-4" id="xsussman3" title="[3] Sussman and Steele 1975, SCHEME: An Interpreter for Extended Lambda Calculus">Sussman
+75</a>], which contains a complete reference manual as well as a fully
+documented implementation of the language in <span class="sc">MacLISP</span> [<a href="#moon-74-1-2-3-4" id="xmoon3" title="[3] Moon 1974, MACLISP Reference Manual, Revision 0">Moon
+74</a>].</p>
+</section>
+</section>
+<section id="bibliography" class="level1">
+<h1><a href="#contents" title="Go to Contents">Bibliography</a></h1>
+<p><span class="xl">. . .</span></p>
+<section id="knuth-74-1-2" class="level4">
+<h4>{{ [Knuth 74] <span class="fr"><a href="#xknuth1">1</a>, <a href="#xknuth2">2</a></span><br />
+</h4>
+<p>Knuth, Donald E. <a href="https://dl.acm.org/doi/10.1145/356635.356640" title="dl.acm.org/doi/10.1145/356635.356640"><em>Structured Programming
+with go to Statements</em></a>. ACM Computing Surveys 6, 4 (December
+1974) pp. 261–301. }}</p>
+</section>
+<section id="landin-65-1-2-3-4-5-6-7" class="level4">
+<h4>[Landin 65] <span class="fr"><a href="#xlan1">1</a>, <a href="#xlan2">2</a>, <a href="#xlan3">3</a>, <a href="#xlan4">4</a>, <a href="#xlan5">5</a>, <a href="#xlan6">6</a>, <a href="#xlan7">7</a></span><br />
+</h4>
+<p>Landin, Peter J. <a href="https://dl.acm.org/doi/10.1145/363744.363749" title="dl.acm.org/doi/10.1145/363744.363749"><em>A Correspondence
+between ALGOL 60 and Church’s Lambda-Notation</em></a>. CACM 8, 2-3 (<a href="https://dl.acm.org/doi/10.1145/363744.363749" title="dl.acm.org/doi/10.1145/363744.363749">February</a> and <a href="https://dl.acm.org/doi/10.1145/363791.363804" title="dl.acm.org/doi/10.1145/363791.363804">March</a> 1965).<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="mccarthy-62" class="level4">
+<h4>[McCarthy 62] <span class="fr"><a href="#xmccarthy-62">^</a></span><br />
+</h4>
+<p>McCarthy, John, et al. <a href="https://apps.dtic.mil/sti/tr/pdf/AD0406138.pdf" title="apps.dtic.mil/sti/tr/pdf/AD0406138.pdf"><em>LISP 1.5 Programmer’s
+Manual</em></a>. The MIT Press (Cambridge, 1962).<br />
+{{see also McCarthy et al <a href="https://www.softwarepreservation.org/projects/LISP/book/LISP%201.5%20Programmers%20Manual.pdf" title="www.softwarepreservation.org/projects/LISP/book/LISP%201.5%20Programmers%20Manual.pdf"><em>LISP
+1.5 Programmer’s Manual</em></a> [Second edition] The MIT Press
+(Cambridge, 1965).}}<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="naur-60" class="level4">
+<h4>{{ [Naur 60] <span class="fr"><a href="#xnaur-60">^</a></span><br />
+</h4>
+<p>Naur, Peter <a href="https://dl.acm.org/doi/10.5555/1060892.1060898" title="dl.acm.org/doi/10.5555/1060892.1060898"><em>An example of a
+function designator changing the value of a formal variable</em></a>.
+ALGOL Bulletin, Issue 10, pp. 12–13. }}<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="reynolds-72-1-2-3-4-5-6" class="level4">
+<h4>[Reynolds 72] <span class="fr"><a href="#xrey1">1</a>, <a href="#xrey2">2</a>, <a href="#xrey3">3</a>, <a href="#xrey4">4</a>, <a href="#xrey5">5</a>, <a href="#xrey6">6</a></span><br />
+</h4>
+<p>Reynolds, John C. <a href="https://dl.acm.org/doi/10.1145/800194.805852" title="dl.acm.org/doi/10.1145/800194.805852"><em>Definitional
+Interpreters for Higher Order Programming Languages</em></a>. ACM
+Conference Proceedings 1972.<br />
+<span class="xl">. . .</span></p>
+</section>
+<section id="sussman-75-1-2-3-4" class="level4">
+<h4>[Sussman 75] <span class="fr"><a href="#xsussman1">1</a>, <a href="#xsussman2">2</a>, <a href="#xsussman3">3</a>, <a href="#xsussman4">4</a></span><br />
+</h4>
+<p>Sussman, Gerald Jay, and Steele, Guy L. Jr. <a href="https://dspace.mit.edu/handle/1721.1/5794" title="dspace.mit.edu/handle/1721.1/5794 (PDF scan)"><em>SCHEME: An
+Interpreter for Extended Lambda Calculus</em></a>. AI Lab Memo 349. MIT
+(Cambridge, December 1975).<br />
+{{Transcriptions: <a href="lambda-papers-scheme-report.html">HTML</a>,
+<a href="lambda-papers-scheme-report.pdf">PDF</a>}}<br />
+{{Republished with notes as <a href="https://www.researchgate.net/publication/227098423_Scheme_A_Interpreter_for_Extended_Lambda_Calculus" title="www.researchgate.net/publication/227098423_Scheme_A_Interpreter_for_Extended_Lambda_Calculus"><em>Scheme:
+A Interpreter for Extended Lambda Calculus</em></a>. Higher-Order and
+Symbolic Computation 11(4):405-439 (December 1998).<br />
+see also: Sussman, G.J., Steele, G.L. <a href="https://doi.org/10.1023/A:1010079421970" title="doi.org/10.1023/A:1010079421970"><em>The First Report on Scheme
+Revisited</em></a>. Higher-Order and Symbolic Computation 11, 399–404
+(1998). }}<br />
+<span class="xl">. . .</span></p>
+</section>
+</section>
+</body>
+</html>
