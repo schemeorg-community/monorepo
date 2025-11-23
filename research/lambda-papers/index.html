@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Lambda Papers</title>
+  <title>The Lambda Papers</title>
   <link rel="stylesheet" href="/schemeorg.css">
+  <link rel="stylesheet" href="../../schemeorg.css">
   <meta name="viewport" content=
   "width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon/favicon.svg" sizes="any" type=
@@ -25,6 +26,9 @@
         <a href="https://standards.scheme.org/">Standards</a>
       </li>
       <li>
+        <a href="https://research.scheme.org/">Research</a>
+      </li>
+      <li>
         <a href="https://get.scheme.org/">Implementations</a>
       </li>
     </ul>
@@ -37,14 +41,22 @@
 		December 1975 and March 1979.</p>
 	<p>As noted in <a href="https://standards.scheme.org/early/">Early standards</a>, 
 		the tone of these papers is relatively informal and their typesetting targetted 1970s
-		computer printing technology. </p>
-	<p>HTML and PDF transcriptions with links are now available,
-		in addition to the MIT scans of original printed copies (<a href="#note1">Note 1</a>)</p>
+		computer printing technology. 
+    Scans of original printed copies are available in the digital repository of 
+    <a href="https://dspace.mit.edu/discover?scope=%2F&query=Lambda&submit=Go&filtertype_0=author&filtertype_1=author&filter_relational_operator_1=notcontains&filter_relational_operator_0=contains&filter_1=Rich&filter_0=Steele%2C+Guy&rpp=10&sort_by=dc.date.issued_dt&order=asc"
+    >MIT research</a>
+    and are listed in the Computer History Museum Software Preservation Group's
+    <a href="https://softwarepreservation.computerhistory.org/LISP/scheme_family.html#Scheme_"
+    >Scheme Project</a></p>
+	<p>HTML transcriptions with internal navigation and bibliography links are available here.
+		The formatting of these transcriptions aims to retain the character of the originals,
+		with updated typography and navigation;
+	  the HTML versions are self-contained files which can be saved and viewed offline.</p>
 
 <p>Sussman, Gerald Jay and Steele, Guy L. 
-	<strong>SCHEME: An Interpreter For Extended Lambda Calculus</strong>. AIM-349, December 1975. 
-	[<a href="lambda-papers-scheme-report.html">HTML</a>, 
-	 <a href="lambda-papers-scheme-report.pdf">PDF</a>] (<a href="#note2">Note 2</a>)
+	<a href="lambda-papers-scheme-report.html"><strong>SCHEME: An Interpreter For Extended Lambda Calculus</strong></a>.
+  AIM-349, December 1975. 
+  (<a href="#note1">Note 1</a>)
 	<blockquote>
 		"Inspired by ACTORS, we have implemented an interpreter for a LISP-like language, 
 	  SCHEME, based on the lambda calculus, but extended for side effects, multiprocessing, and 
@@ -52,9 +64,8 @@
   </blockquote></p>
 
 <p>Steele, Guy L and Sussman, Gerald Jay. 
-	<strong>LAMBDA: The Ultimate Imperative</strong>. AIM-353, March 1976. 
-	[<a href="lambda-papers-ltu-imperative-extract.html">HTML</a>, 
-	 <a href="lambda-papers-ltu-imperative-extract.pdf">PDF</a>]
+	<a href="lambda-papers-ltu-imperative.html"><strong>LAMBDA: The Ultimate Imperative</strong></a>.<br/>
+  AIM-353, March 1976.
 	<blockquote>
 		"We demonstrate how to model the following common programming constructs in terms of an 
 		applicative order language similar to LISP: - Simple Recursion - Iteration - Compound 
@@ -62,47 +73,46 @@
 		Expressions - Fluid Variables - Call by Name, Call by Need, and Call by Reference..."
   </blockquote></p>
 		
-<p>Steele, Guy L. <strong>LAMBDA The Ultimate Declarative</strong>. AIM-379, November 1976. 
-	[<a href="lambda-papers-ltu-declarative.html">HTML</a>, 
-	 <a href="lambda-papers-ltu-declarative.pdf">PDF</a>]
+<p>Steele, Guy L. 
+  <a href="lambda-papers-ltu-declarative.html"><strong>LAMBDA The Ultimate Declarative</strong></a>.<br/>
+  AIM-379, November 1976. 
 	<blockquote>
 		"In this paper, a sequel to LAMBDA: The Ultimate Imperative, a new view of LAMBDA as a 
 		renaming operator is presented and contrasted with the usual functional view taken by 
 		LISP..."
   </blockquote></p>
 
-<p>Steele, Guy L. <strong>Compiler Optimization Based on Viewing LAMBDA as RENAME plus GOTO
-</strong>. May 1977.
-	[<a href="lambda-papers-compiler-optimization.html">HTML</a>, 
-	 <a href="lambda-papers-compiler-optimization.pdf">PDF</a>] (<a href="#note3">Note 3</a>)
+<p>Steele, Guy L. 
+  <a href="lambda-papers-compiler-optimization.html"><strong>Compiler Optimization Based on Viewing LAMBDA as RENAME plus GOTO</strong></a>.<br/>
+  May 1977.
+  (<a href="#note2">Note 2</a>)
 	<blockquote>
     "We have developed a compiler for the lexically-scoped dialect of LISP known as SCHEME. 
 		The compiler knows relatively little about specific data manipulation primitives such as
 	  arithmetic operators, but concentrates on general issues of environment and control..."
   </blockquote></p>
 
-<p>Steele, Guy L. <strong>Debunking the "Expensive Procedure Call" Myth or, Procedure Call 
-	Implementations Considered Harmful or, LAMBDA: The Ultimate GOTO</strong>. AIM-443, October 1977. 
-	[<a href="lambda-papers-ltu-goto.html">HTML</a>, 
-	 <a href="lambda-papers-ltu-goto.pdf">PDF</a>]
+<p>Steele, Guy L. 
+  <strong><a href="lambda-papers-ltu-goto.html">Debunking the "Expensive Procedure Call" Myth or, Procedure Call 
+	Implementations Considered Harmful or, LAMBDA: The Ultimate GOTO</a></strong>. <br/>
+  AIM-443, October 1977. 
 	<blockquote>
     "Folklore states that GOTO statements are "cheap", while procedure calls are "expensive". 
 		This myth is largely a result of poorly designed language implementations..."	
   </blockquote></p>
 	
 <p>Steele, Guy L and Sussman, Gerald Jay. 
-	<strong>The Revised Report on SCHEME A Dialect of LISP</strong>. AIM-452, January 1978.
-  [<a href="lambda-papers-revised-report.html">HTML</a>, 
-	 <a href="lambda-papers-revised-report.pdf">PDF</a>]
+	<strong><a href="lambda-papers-revised-report.html">The Revised Report on SCHEME A Dialect of LISP</a></strong>.<br/>
+  AIM-452, January 1978.
 	<blockquote>
 	  "SCHEME is a dialect of LISP. It is an expression-oriented, applicative order, 
 		interpreter-based language which allows one to manipulate programs as data..."
   </blockquote></p>
 
-<p>Sussman, Gerald Jay and Steele, Guy L. <strong>The Art of the Interpreter or, The 
-	Modularity Complex (Parts Zero, One, and Two)</strong>. AIM-453, May 1978. 
-  [<a href="lambda-papers-interpreter.html">HTML</a>, 
-	 <a href="lambda-papers-interpreter.pdf">PDF</a>]
+<p>Sussman, Gerald Jay and Steele, Guy L. 
+  <a href="lambda-papers-interpreter.html"><strong>The Art of the Interpreter or, The 
+	Modularity Complex (Parts Zero, One, and Two)</strong></a>.<br/>
+  AIM-453, May 1978. 
 	<blockquote>
     "We examine the effects of various language design decisions on the programming styles 
 		available to a user of the language, with particular emphasis on the ability to 
@@ -110,20 +120,22 @@
 		meta-circular interpreter for the language under consideration..."
   </blockquote></p>
 
-<p>Steele, Guy L. <strong>RABBIT: A compiler for SCHEME</strong>. AITR-474, May 1978. 
-  [<a href="lambda-papers-rabbit.html">HTML</a>, 
-	 <a href="lambda-papers-rabbit.pdf">PDF</a>]
+<p>Steele, Guy L. 
+  <a href="lambda-papers-rabbit.html"><strong>RABBIT: A compiler for SCHEME
+  (A Dialect of LISP) A Study in Compiler Optimization Based on Viewing LAMBDA as RENAME 
+  and PROCEDURE CALL as GOTO</strong></a>.<br/>
+  AITR-474, May 1978. 
 	<blockquote>
     "We have developed a compiler for the lexically-scoped dialect of LISP known as SCHEME. 
 		The compiler knows relatively little about specific data manipulation primitives such as 
 		arithmetic operators, but concentrates on general issues of environment and control..."
   </blockquote></p>
 		
-<p>Steele, Guy L and Sussman, Gerald Jay. <strong>Design of LISP-based Processors, 
+<p>Steele, Guy L and Sussman, Gerald Jay. 
+  <a href="lambda-papers-ltu-opcode.html"><strong>Design of LISP-based Processors, 
 	or SCHEME: A Dielectric LISP, or Finite Memories Considered Harmful, or LAMBDA: The 
-	Ultimate Opcode</strong>. AIM-514, March 1979. 
-  [<a href="lambda-papers-ltu-opcode/ltu8-opcode.html">HTML</a>, 
-	 <a href="lambda-papers-ltu-opcode/ltu8-opcode.pdf">PDF</a>]
+	Ultimate Opcode</strong></a>.<br/>
+  AIM-514, March 1979. 
 	<blockquote>
     "We present a design for a class of computers whose 'instruction sets' are based on LISP. 
 		LISP, like traditional stored-program machine languages and unlike most high-level 
@@ -133,50 +145,27 @@
   </blockquote></p>
 
 <h4>Notes</h4>
- <ol>
-	  <li id="note1">PDF scans of original printed copies:
-			<ul>
-			  <li>Scheme: An Interpreter For Extended Lambda Calculus (AIM-349, December 1975)
-				[<a href="https://standards.scheme.org/official/r0rs.pdf">PDF</a>]</li>
-			  <li>Lambda: The Ultimate Imperative (AIM-353, March 1976)
-				[<a href="https://apps.dtic.mil/sti/pdfs/ADA030751.pdf">PDF</a>]</li>
-				<li>Lambda The Ultimate Declarative (AIM-379, November 1976)
-				[<a href="https://apps.dtic.mil/sti/pdfs/ADA034090.pdf">PDF</a>]</li>
-				<li>Debunking the "Expensive Procedure Call" Myth or, Procedure Call Implementations 
-				Considered Harmful or, LAMBDA: The Ultimate GOTO (AIM-443, October 1977)
-			  [<a href="https://apps.dtic.mil/sti/pdfs/ADA062381.pdf">PDF</a>]</li>
-		    <li>The Revised Report on SCHEME A Dialect of LISP (AIM-452, January 1978)
-				[<a href="https://standards.scheme.org/official/r1rs.pdf"></a>]</li>
-			  <li>The Art of the Interpreter or, The Modularity Complex (Parts Zero, One, and Two) 
-				(AIM-453, May 1978)
-			  [<a href="https://dspace.mit.edu/bitstream/handle/1721.1/6094/AIM-453.pdf">PDF</a>]</li>
-		    <li>RABBIT: A Compiler for SCHEME (AITR-474, May 1978)
-				[<a href="https://dspace.mit.edu/bitstream/handle/1721.1/6913/AITR-474.pdf">PDF</a>]</li>
-		  	<li>Design of LISP-based Processors, or SCHEME: A Dielectric LISP, or Finite Memories 
-				Considered Harmful, or LAMBDA: The Ultimate Opcode (AIM-514, March 1979)
-			  [<a href="https://dspace.mit.edu/bitstream/handle/1721.1/5731/AIM-514.pdf">PDF</a>]</li>
-			</ul>
-		</li>
+<ol>
+  <li id="note1">The first report was republished in 1998 with additional notes and retrospective commentary:
+  	<ul>
+     	<li>Sussman, G.J., Steele, G.L. <strong>Scheme: A Interpreter for Extended Lambda Calculus</strong>.
+      Higher-Order and Symbolic Computation 11(4):405-439 (December 1998).
+      [<a href="https://www.researchgate.net/publication/227098423_Scheme_A_Interpreter_for_Extended_Lambda_Calculus"
+    	>PDF</a>]</li>
+      <li>Sussman, G.J., Steele, G.L. <strong>The First Report on Scheme Revisited</strong>.
+      Higher-Order and Symbolic Computation 11(4):399–404 (December 1998).
+      [<a href="https://doi.org/10.1023/A:1010079421970">PDF</a>]</li>
+  </ul></li>
+  	
+  <li id="note2">Published in
+  	<ul>
+    	<li><strong>Artificial Intelligence, an MIT Perspective, Volume 2</strong>
+    	(edited by Patrick Henry Winston and Richard Henry Brown, MIT Press 1979)
+    	[<a href="https://archive.org/details/artificialintell0002unse">read online at archive.org</a>]
+      (version here abridged from <strong>RABBIT: A compiler for SCHEME</strong>)</li>
+    </ul>
+  </li>
 
-<li id="note2">The first report was republished in 1998 with additional notes and retrospective commentary:
-	<ul>
- 	<li>Sussman, G.J., Steele, G.L. <strong>Scheme: A Interpreter for Extended Lambda Calculus</strong>.
-  Higher-Order and Symbolic Computation 11(4):405-439 (December 1998).
-  [<a href="https://www.researchgate.net/publication/227098423_Scheme_A_Interpreter_for_Extended_Lambda_Calculus"
-	>PDF</a>]</li>
-  <li>Sussman, G.J., Steele, G.L. <strong>The First Report on Scheme Revisited</strong>.
-  Higher-Order and Symbolic Computation 11(4):399–404 (December 1998).
-  [<a href="https://doi.org/10.1023/A:1010079421970">PDF</a>]</li>
-</ul></li>
-	
-<li id="note3">Published in
-	<ul>
-	<li><strong>Artificial Intelligence, an MIT Perspective, Volume 2</strong>
-	(edited by Patrick Henry Winston and Richard Henry Brown, MIT Press 1979)
-	[<a href="https://archive.org/details/artificialintell0002unse">archive.org</a>]</li>
-  </ul>
-</li>
-	
 </ol>
 
 
