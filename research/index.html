@@ -8,6 +8,13 @@
   "width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon/favicon.svg" sizes="any" type=
   "image/svg+xml">
+  
+  <style>
+    li {
+      line-height: 1.2;
+      padding: 0.2em 0
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -24,32 +31,101 @@
       <li>
         <a href="https://standards.scheme.org/">Standards</a>
       </li>
+      <li class="active">Research</li>
       <li>
         <a href="https://get.scheme.org/">Implementations</a>
       </li>
     </ul>
   </header>
   <h1 id="logo">Scheme Research</h1>
-  <h2>Bibliography</h2>
-  <ul>
+	
+	  <h2>Early research</h2>
+	  <p>The inaugural report on Scheme by Gerald Sussman and Guy Steele 
+		   was published as a research memo by the 
+			 <b>MIT Artificial Intelligence Laboratory</b> 
+			 (now <a href="https://www.csail.mit.edu/">CSAIL</a>), 
+			 the birthplace of both Lisp and Scheme.</p>
+		<p>It was the first in a series of AI Memos known as "<a href="lambda-papers/" 
+			 title="Full references with links to HTML transcriptions"
+			 ><strong>The Lambda Papers</strong></a>":
+			<ul>
+				<li><a href="lambda-papers/lambda-papers-scheme-report.html">
+          SCHEME An Interpreter For Extended <em>Lambda Calculus</em></a> 
+          (AIM-349, December 1975)</li>
+ 				<li><a href="lambda-papers/lambda-papers-ltu-imperative.html">
+          LAMBDA: The Ultimate <em>Imperative</em></a>
+          (AIM-353, March 1976)</li>
+				<li><a href="lambda-papers/lambda-papers-ltu-declarative.html">
+          LAMBDA: The Ultimate <em>Declarative</em></a>
+          (AIM-379, November 1976)</li>
+				<li><a href="lambda-papers/lambda-papers-compiler-optimization.html">
+          Compiler Optimization Based on Viewing LAMBDA as <em>RENAME plus GOTO</em></a>
+          (May 1977)</li>
+				<li><a href="lambda-papers/lambda-papers-ltu-goto.html">
+          Debunking the "Expensive Procedure Call" Myth</a>
+          or, Procedure Call Implementations Considered Harmful or, 
+          LAMBDA: The Ultimate <em>GOTO</em>
+          (AIM-443, October 1977)</li>
+				<li><a href="lambda-papers/lambda-papers-revised-report.html">
+          The Revised Report on SCHEME A Dialect of LISP</a>
+          (AIM-452, January 1978)</li>
+				<li><a href="lambda-papers/lambda-papers-interpreter.html">
+          The Art of the Interpreter or, The Modularity Complex
+          (Parts Zero, One, and Two)</a> 
+          (AIM-453, May 1978)</li>
+				<li><a href="lambda-papers/lambda-papers-rabbit.html">
+          RABBIT: A Compiler for SCHEME (A Dialect of LISP)</a> A Study in Compiler Optimization Based on Viewing LAMBDA as <em>RENAME
+          and PROCEDURE CALL as GOTO</em> (AITR-474, May 1978)</li>
+				<li><a href="lambda-papers/lambda-papers-ltu-opcode.html">
+          Design of LISP-based Processors</a>, or SCHEME: A Dielectric LISP, 
+          or Finite Memories Considered Harmful, or 
+          LAMBDA: The Ultimate <em>Opcode</em>
+          (AIM-514, March 1979)</li>
+			</ul>
+		<p>From 1980 Scheme research spread beyond MIT, and Scheme became a common
+			"algorithm language" in academic Computer Science (replacing publication style Algol).
+		  The trope <em>"LAMBDA: The Ultimate &lt;x&gt;"</em> continues to be used 
+			in the titles of CS papers.
+		  </p>
+
+
+  <h2>Bibliographies of Scheme research 1975-2007</h2>
+		<ul>
     <li>
-      <a href="lambda-papers/">The Original 'Lambda Papers' by Guy
-      Steele and Gerald Sussman</a>
+      <a href="https://conservatory.scheme.org/readscheme/page1.html">The Original 'Lambda Papers'</a>
+			(see above)
     </li>
-    <li>Scheme, Language Features, and Semantics</li>
-    <li>Macros</li>
-    <li>Object-Oriented Programming</li>
-    <li>Modules and Component-Oriented Programming</li>
-    <li>Continuations and Continuation Passing Style</li>
-    <li>Applications of Scheme</li>
-    <li>Compiler Technology/Implementation Techniques and
-    Optimization</li>
     <li>
-      <a href="concurrency/">Distributed, Parallel, and Concurrent
+			<a href="https://conservatory.scheme.org/readscheme/page2.html">Scheme, Language Features, and Semantics</a>
+		</li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page3.html">Macros</a></li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page4.html">Object-Oriented Programming</a>
+		</li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page5.html">Modules and Component-Oriented Programming</a>
+		</li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page6.html">Continuations and Continuation Passing Style</a>
+		</li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page7.html">Applications of Scheme</a>
+		</li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page8.html">Compiler Technology/Implementation Techniques and
+    Optimization</a>
+	  </li>
+    <li>
+      <a href="https://conservatory.scheme.org/readscheme/page9.html">Distributed, Parallel, and Concurrent
       Programming</a>
     </li>
-    <li>Partial Evaluation</li>
+    <li>
+			<a href="https://conservatory.scheme.org/readscheme/page10.html">Partial Evaluation</a>
+		</li>
   </ul>
+		
+
   <h2>Research groups</h2>
   <p>Please <a href="mailto:schemeorg@srfi.schemers.org">let us
   know</a> if we are missing a research group doing work in Scheme,
