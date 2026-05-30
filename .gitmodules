@@ -1,0 +1,4 @@
+[submodule "standards/r7rs-html5"]
+	path = standards/r7rs-html5
+	url = https://codeberg.org/aartaka/r7rs-html5
+	branch = scheme-org
