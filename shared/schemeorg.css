@@ -101,6 +101,10 @@ a.offsite:visited {
   border-bottom: 1px dashed #551a8b;
 }
 
+pre {
+    overflow-x: auto;
+}
+
 .blog-posts li {
   margin-left: -2rem;
 }
